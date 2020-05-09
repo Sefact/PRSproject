@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Modern Business - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href='{% static "blog/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href='{% static "blog/css/modern-business.css" %}' rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">Chicken POP</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/introduce">Introduce</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/services">Date</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">FAQ</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Recomendation
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="/recommendation1">인기 순위</a>
+              <a class="dropdown-item" href="/recommendation2">유저 추천</a>
+              <a class="dropdown-item" href="/recommendation3">에디터 추천</a>
+              <a class="dropdown-item" href="/recommendation4">회원 맞춤형</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              User
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a class="dropdown-item" href="full-width.html">Sign in</a>
+              <a class="dropdown-item" href="sidebar.html">Sign up</a>
+              <a class="dropdown-item" href="faq.html">Privacy</a>
+              <a class="dropdown-item" href="404.html">Calendar</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container-fluid">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">에디터
+      <small>추천 장소</small>
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="index.html">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="index.html">Services</a>
+      </li>
+      <li class="breadcrumb-item active">장소</li>
+    </ol>
+
+    <div class="row">
+
+      <!-- Blog Entries Column -->
+      <div class="col-6">
+
+        <!-- Blog Post -->
+        <div class="card mb-4">
+          <img class="card-img-top" src="{% static "blog/img/23.jpg" %}" alt="Card image cap">
+          <div class="card-body">
+            <h1>라세느 <span style="font-weight: bold; font-size: x-large; color: #FFA500;">4.4</span></h1>
+            <p style="color: #AEAEAE;">&nbsp;롯데호텔 서울</p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">주소</td>
+                  <td scope="col">서울특별시 중구 남대문로 81 롯데호텔서울 본관 1F</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">전화번호</td>
+                  <td scope="col">02-317-7171</td>
+                </tr>
+              </thead>  
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">종류</td>
+                  <td scope="col">음식점</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">가격대</td>
+                  <td scope="col">4만원 이상</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">주차</td>
+                  <td scope="col">발렛</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">영업시간</td>
+                  <td scope="col">06:00 - 22:00</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">쉬는시간</td>
+                  <td scope="col">10:00 - 11:30<br>14:30 - 18:00</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">메뉴 및 가격</td>
+                  <td scope="col">
+                    아침(평일, 어른)&nbsp;&nbsp;&nbsp;&nbsp;59,300원<br>
+                    아침(주말 및 공휴일)&nbsp;&nbsp;&nbsp;&nbsp;59,300원<br>
+                    점심(평일, 어른)&nbsp;&nbsp;&nbsp;&nbsp;93,000원<br>
+                    점심(주말 및 공휴일)&nbsp;&nbsp;&nbsp;&nbsp;108,000원<br>
+                    저녁(성인)&nbsp;&nbsp;&nbsp;&nbsp;108,000원
+                  </td>
+                </tr>
+              </thead>                                          
+             </table>
+            <p class="card-text">롯데호텔서울의 세련된 업스케일 뷔페 레스토랑, 라세느에서는 전문 셰프들이 즉석에서 선보이는 200여 가지의 요리를 경험할 수 있습니다. 
+아시안식, 일식, 양식, 누들, 콜드밀(Cold Meal), 코리안 그릴, 디저트, BAR 등 8개의 라이브 섹션에서 다양한 요리를 맛볼 수 있는 스튜디오 타입의 라이브 키친입니다.</p>
+          </div>
+          <div class="card-footer text-muted">
+            Posted on January 1, 2020 by
+            <a href="#">Chicken POP</a>
+          </div>
+        </div>
+        
+        
+
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="#">&larr; Older</a>
+          </li>
+          <li class="pagination justify-content-center mb-4">
+            <a class="page-link" href="#">Newer &rarr;</a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="col-4">
+        <!-- Embedded Google Map -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1581.271790156571!2d126.98041644930302!3d37.56581581327798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2f208c205d7%3A0xfd82ff77088737d0!2z65287IS464qQ!5e0!3m2!1sko!2skr!4v1589009434543!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src='{% static "blog/vendor/jquery/jquery.min.js" %}'></script>
+  <script src='{% static "blog/vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
+
+</body>
+
+</html>

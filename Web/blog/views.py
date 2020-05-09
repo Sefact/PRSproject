@@ -7,6 +7,7 @@ from datetime import datetime
 from django.template import loader
 
 
+## Main page views
 def index(request):
     template = loader.get_template('blog/index.html')
     now = datetime.now()
@@ -36,3 +37,7 @@ def recommendation3(request):
 
 def recommendation4(request):
     return render(request, 'blog/recommendation4.html')
+
+## Main Page Editor Recommendation views
+def index_editor1(request):
+    return render(request, 'blog/index_editor1.html')

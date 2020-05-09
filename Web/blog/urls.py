@@ -14,4 +14,5 @@ urlpatterns = [
     path('recommendation2/', views.recommendation2, name='recommendation2'),
     path('recommendation3/', views.recommendation3, name='recommendation3'),
     path('recommendation4/', views.recommendation4, name='recommendation4'),
+    path('index_editor1/', views.index_editor1, name='index_editor1'),
 ]
