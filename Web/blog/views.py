@@ -41,3 +41,19 @@ def recommendation4(request):
 ## Main Page Editor Recommendation views
 def index_editor1(request):
     return render(request, 'blog/index_editor1.html')
+
+def index_editor2(request):
+    return render(request, 'blog/index_editor2.html')
+
+def index_editor3(request):
+    return render(request, 'blog/index_editor3.html')
+
+## Recommendation One Page Recommendation views
+def recommend1_1(request):
+    return render(request, 'blog/recommend1/recommend1_1.html')
+
+def recommend1_2(request):
+    return render(request, 'blog/recommend1/recommend1_2.html')
+
+def recommend1_3(request):
+    return render(request, 'blog/recommend1/recommend1_3.html')
