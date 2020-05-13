@@ -34,7 +34,7 @@
             <a class="nav-link" href="/introduce">Introduce</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/services">Date</a>
+            <a class="nav-link" href="/services">Tag</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/contact">FAQ</a>
@@ -70,18 +70,15 @@
   <div class="container-fluid">
 
     <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">에디터
-      <small>추천 장소</small>
-    </h1>
-
+    <a><br></a>
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="index.html">Home</a>
+        <a href="{% url 'index' %}">Home</a>
       </li>
       <li class="breadcrumb-item">
-        <a href="index.html">Services</a>
+        <a href="/recommendation3">에디터 추천</a>
       </li>
-      <li class="breadcrumb-item active">장소</li>
+      <li class="breadcrumb-item active">미스티크</li>
     </ol>
 
     <div class="row">
@@ -90,28 +87,29 @@
       <div class="col-6">
 
         <!-- Blog Post -->
+        <!-- Blog Post -->
         <div class="card mb-4">
-          <img class="card-img-top" src="{% static "blog/img/14.jpeg" %}" alt="Card image cap">
+          <img class="card-img-top" src="{% static "blog/img/태그/미스티크메인.PNG" %}" alt="Card image cap" width="1200" height="590">
           <div class="card-body">
-            <h1>라뜰리에 김가<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;3.9</span></h1>
-            <p style="color: #AEAEAE;">&nbsp;원주점</p>
+            <h1>미스티크<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.1</span></h1>
+            <p style="color: #AEAEAE;">&nbsp;통영카페</p>
             <table class="table">
               <thead>
                 <tr>
                   <td style="color: #D5D4D4;" scope="col">주소</td>
-                  <td scope="col">강원도 원주시 행구동 행구로 314</td>
+                  <td scope="col">경상남도 통영시 산양읍 연화리 194</td>
                 </tr>
               </thead>
               <thead>
                 <tr>
                   <td style="color: #D5D4D4;" scope="col">전화번호</td>
-                  <td scope="col">033-735-5677</td>
+                  <td scope="col">055-646-9046</td>
                 </tr>
               </thead>  
               <thead>
                 <tr>
                   <td style="color: #D5D4D4;" scope="col">종류</td>
-                  <td scope="col">베이커리, 카페</td>
+                  <td scope="col">카페, 디저트</td>
                 </tr>
               </thead>
               <thead>
@@ -123,7 +121,7 @@
               <thead>
                 <tr>
                   <td style="color: #D5D4D4;" scope="col">영업시간</td>
-                  <td scope="col">10:00 ~ 22:00</td>
+                  <td scope="col">10:30 ~ 20:00</td>
                 </tr>
               </thead>
               <thead>
@@ -135,15 +133,14 @@
               <thead>
                 <tr>
                   <td style="color: #D5D4D4;" scope="col">메뉴 및 가격</td>
-                  <td scope="col"><img src="{% static "blog/img/10.jpg" %}" width="100" height="100"></td>
+                  <td scope="col">아메리카노 5000<br>카페라떼 5500<br>리얼 바닐라 라떼 6000<br>멜란지 모카 6500<br>아포가토 7000</td>
                 </tr>
               </thead>
              </table>
-            <p class="card-text">롯데호텔서울의 세련된 업스케일 뷔페 레스토랑, 라세느에서는 전문 셰프들이 즉석에서 선보이는 200여 가지의 요리를 경험할 수 있습니다. 
-아시안식, 일식, 양식, 누들, 콜드밀(Cold Meal), 코리안 그릴, 디저트, BAR 등 8개의 라이브 섹션에서 다양한 요리를 맛볼 수 있는 스튜디오 타입의 라이브 키친입니다.</p>
+            <p class="card-text">Unknown</p>
           </div>
           <div class="card-footer text-muted">
-            Posted on January 1, 2020 by
+            Posted on May 12, 2020 by
             <a href="#">Chicken POP</a>
           </div>
         </div>
@@ -153,17 +150,28 @@
         <!-- Pagination -->
         <ul class="pagination justify-content-center mb-4">
           <li class="page-item">
-            <a class="page-link" href="#">&larr; Older</a>
+            <a class="page-link" href="/recommend3_4">&larr; Older</a>
           </li>
           <li class="pagination justify-content-center mb-4">
-            <a class="page-link" href="#">Newer &rarr;</a>
+            <a class="page-link" href="/recommend3_6">Newer &rarr;</a>
           </li>
         </ul>
 
       </div>
       <div class="col-4">
         <!-- Embedded Google Map -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d393.62131600617084!2d127.7779145542556!3d37.884371922565016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3562e562c130f291%3A0xe3040bafd709c551!2z67m16rO17J6lIOudvOucsOumrOyXkCDquYDqsIAg7LaY7LKc7KCQ!5e0!3m2!1sko!2skr!4v1589097477320!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d409.64839689494875!2d128.39567341257285!3d34.77606298041517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356ebeb5f8b859d3%3A0x4ccfcee0dc643a14!2z66-47Iqk7Yuw7YGsKE1ZU1RJUVVFKQ!5e0!3m2!1sko!2skr!4v1589294394950!5m2!1sko!2skr" width="600" height="590" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <a><br></a>
+        <table style=border-spacing: 10px;>
+          <tr>
+            <td scope="col"><img src="{% static "blog/img/태그/미스티크1.PNG" %}" width="250" height="250"></td>
+            <td scope="col"><img src="{% static "blog/img/태그/미스티크2.PNG" %}" width="250" height="250"></td>
+          </tr>
+            <td scope="col"><img src="{% static "blog/img/태그/미스티크3.PNG" %}" width="250" height="250"></td>
+            <td scope="col"><img src="{% static "blog/img/태그/미스티크.PNG" %}" width="250" height="250"></td>
+          <tr>
+          </tr>
+        </table>
       </div>
   </div>
   <!-- /.container -->

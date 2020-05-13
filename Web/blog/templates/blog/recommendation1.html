@@ -34,7 +34,7 @@
             <a class="nav-link" href="/introduce">Introduce</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/services">Date</a>
+            <a class="nav-link" href="/services">Tag</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/contact">FAQ</a>
@@ -76,7 +76,7 @@
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="index.html">Home</a>
+        <a href="{% url 'index' %}">Home</a>
       </li>
       <li class="breadcrumb-item active">인기 순위</li>
     </ol>
@@ -246,10 +246,10 @@
         </a>
       </li>
       <li class="page-item">
-        <a class="page-link" href="#">1</a>
+        <a class="page-link" href="/recommendation1">1</a>
       </li>
       <li class="page-item">
-        <a class="page-link" href="#">2</a>
+        <a class="page-link" href="/recommendation1_2">2</a>
       </li>
       <li class="page-item">
         <a class="page-link" href="#">3</a>

@@ -40,20 +40,36 @@ def recommendation4(request):
 
 ## Main Page Editor Recommendation views
 def index_editor1(request):
-    return render(request, 'blog/index_editor1.html')
+    return render(request, 'blog/index/index_editor1.html')
 
 def index_editor2(request):
-    return render(request, 'blog/index_editor2.html')
+    return render(request, 'blog/index/index_editor2.html')
 
 def index_editor3(request):
-    return render(request, 'blog/index_editor3.html')
+    return render(request, 'blog/index/index_editor3.html')
 
 ## Recommendation One Page Recommendation views
-def recommend1_1(request):
-    return render(request, 'blog/recommend1/recommend1_1.html')
+def recommend3_1(request):
+    return render(request, 'blog/recommend3/recommend3_1.html')
 
-def recommend1_2(request):
-    return render(request, 'blog/recommend1/recommend1_2.html')
+def recommend3_2(request):
+    return render(request, 'blog/recommend3/recommend3_2.html')
 
-def recommend1_3(request):
-    return render(request, 'blog/recommend1/recommend1_3.html')
+def recommend3_3(request):
+    return render(request, 'blog/recommend3/recommend3_3.html')
+
+def recommend3_4(request):
+    return render(request, 'blog/recommend3/recommend3_4.html')
+
+def recommend3_5(request):
+    return render(request, 'blog/recommend3/recommend3_5.html')
+
+def recommend3_6(request):
+    return render(request, 'blog/recommend3/recommend3_6.html')
+
+def recommendation1_2(request):
+    return render(request, 'blog/recommendation1_2.html')
+
+## Service Page list views
+def services_list1(request):
+    return render(request, 'blog/services_list1.html')

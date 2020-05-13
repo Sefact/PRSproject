@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Modern Business - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href='{% static "blog/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href='{% static "blog/css/modern-business.css" %}' rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">Chicken POP</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/introduce">Introduce</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/services">Date</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">FAQ</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Recomendation
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="/recommendation1">인기 순위</a>
+              <a class="dropdown-item" href="/recommendation2">유저 추천</a>
+              <a class="dropdown-item" href="/recommendation3">에디터 추천</a>
+              <a class="dropdown-item" href="/recommendation4">회원 맞춤형</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              User
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a class="dropdown-item" href="/full-width">Sign in</a>
+              <a class="dropdown-item" href="/sidebar">Sign up</a>
+              <a class="dropdown-item" href="/faq">Privacy</a>
+              <a class="dropdown-item" href="/404">Calendar</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container-fluid">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <a><br></a>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'index' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="/recommendation3">에디터 추천</a>
+      </li>
+      <li class="breadcrumb-item active">12안젤로</li>
+    </ol>
+
+    <div class="row">
+
+      <!-- Blog Entries Column -->
+      <div class="col-6">
+
+        <!-- Blog Post -->
+        <!-- Blog Post -->
+        <div class="card mb-4">
+          <img class="card-img-top" src="{% static "blog/img/태그/12안젤라메인.PNG" %}" alt="Card image cap" width="1200" height="600">
+          <div class="card-body">
+            <h1>12안젤로<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.3</span></h1>
+            <p style="color: #AEAEAE;">&nbsp;단계동카페</p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">주소</td>
+                  <td scope="col">강원도 원주시 단계동 1115-3</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">전화번호</td>
+                  <td scope="col">033-748-8253</td>
+                </tr>
+              </thead>  
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">종류</td>
+                  <td scope="col">카페, 식사</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">주차</td>
+                  <td scope="col">주차장(무료주차)</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">영업시간</td>
+                  <td scope="col">11:00 ~ 24:00</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">쉬는시간</td>
+                  <td scope="col">없음</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">메뉴 및 가격</td>
+                  <td scope="col">아메리카노 4000<br>자몽에이드 5500<br>안젤라 빙수 14000<br>딸기통통 7500</td>
+                </tr>
+              </thead>
+             </table>
+            <p class="card-text">Unknown</p>
+          </div>
+          <div class="card-footer text-muted">
+            Posted on May 11, 2020 by
+            <a href="#">Chicken POP</a>
+          </div>
+        </div>
+        
+        
+
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="/recommend3_3">&larr; Older</a>
+          </li>
+          <li class="pagination justify-content-center mb-4">
+            <a class="page-link" href="/recommend3_5">Newer &rarr;</a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="col-4">
+        <!-- Embedded Google Map -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d792.9446030495574!2d127.92638433528772!3d37.34775437983944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35637450eadbfa71%3A0xdfad029d59cddaaf!2zMTLslYjsoKTroZw!5e0!3m2!1sko!2skr!4v1589293368278!5m2!1sko!2skr" width="600" height="590" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <a><br></a>
+        <table style=border-spacing: 10px;>
+          <tr>
+            <td scope="col"><img src="{% static "blog/img/태그/12안젤라1.PNG" %}" width="250" height="250"></td>
+            <td scope="col"><img src="{% static "blog/img/태그/12안젤라2.PNG" %}" width="250" height="250"></td>
+          </tr>
+          <tr>
+            <td scope="col"><img src="{% static "blog/img/태그/12안젤라3.PNG" %}" width="250" height="250"></td>
+            <td scope="col"><img src="{% static "blog/img/태그/12안젤라.PNG" %}" width="250" height="250"></td>
+          </tr>
+        </table>
+      </div>
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src='{% static "blog/vendor/jquery/jquery.min.js" %}'></script>
+  <script src='{% static "blog/vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
+
+</body>
+
+</html>

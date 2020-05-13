@@ -34,7 +34,7 @@
             <a class="nav-link" href="/introduce">Introduce</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/services">Tag</a>
+            <a class="nav-link" href="/services">Date</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/contact">FAQ</a>
@@ -70,28 +70,29 @@
   <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">유저
-      <small>추천장소</small>
+    <h1 class="mt-4 mb-3">에디터
+      <small>추천</small>
     </h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <a href="{% url 'index' %}">Home</a>
       </li>
-      <li class="breadcrumb-item active">유저 추천</li>
+      <li class="breadcrumb-item active">인기 순위</li>
     </ol>
 
     <!-- Project One -->
     <div class="row">
       <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/14.jpg" %}" alt="">
+        <a href="/recommend3_1">
+          <img src="{% static "blog/img/태그/라뜰리에메인.PNG" %}" width="630" height="300" alt=""/>
         </a>
       </div>
       <div class="col-md-5">
-        <h3>1. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <h3>1. 빵공장 라뜰리에 김가<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;3.9</span></h3>
+        <a style="color: #D5D4D4;">강원도 원주시 행구동 행구로 314</a>
+        <p>강원도 원주에 위치한 라뜰리에 김가는 비교적 사람이 없는 한적한 공간에 위치해 있으며 아름답게 꾸며진 정원가 카페가 어우러져 사진이 잘찍히는 명소로 유명하다.</p>
+        <a class="btn btn-primary" href="/recommend3_1">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -103,14 +104,15 @@
     <!-- Project Two -->
     <div class="row">
       <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/15.jpg" %}" alt="">
+        <a href="/recommend3_2">
+          <img src="{% static "blog/img/태그/언올드첨메인.PNG" %}" alt="" width="630" height="300"/>
         </a>
       </div>
       <div class="col-md-5">
-        <h3>2. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <h3>2. 언올드첨<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.2</span></h3>
+        <a style="color: #D5D4D4;">경기도 수원시 팔달구 고화로 39번길 76</a>
+        <p>Unkown.</p>
+        <a class="btn btn-primary" href="/recommend3_2">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -122,14 +124,15 @@
     <!-- Project Three -->
     <div class="row">
       <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/16.jpg" %}" alt="">
+        <a href="/recommend3_3">
+          <img src="{% static "blog/img/태그/카페인신현리메인.PNG" %}" alt="" width="630" height="300">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>3. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <h3>3. 카페인 신현리<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.0</span></h3>
+        <a style="color: #D5D4D4;">경기도 광주시 오포읍 새말길167번길 68</a>
+        <p>Unknown</p>
+        <a class="btn btn-primary" href="/recommend3_3">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -140,16 +143,16 @@
 
     <!-- Project Four -->
     <div class="row">
-
       <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/17.jpg" %}" alt="">
+        <a href="/recommend3_4">
+          <img src="{% static "blog/img/태그/12안젤라메인.PNG" %}" alt="" width="630" height="300"/>
         </a>
       </div>
       <div class="col-md-5">
-        <h3>4. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <h3>4. 12안젤로<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.0</span></h3>
+        <a style="color: #D5D4D4;">강원도 원주시 단계동 1115-3</a>
+        <p>Unknown</p>
+        <a class="btn btn-primary" href="/recommend3_4">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -161,14 +164,15 @@
     <!-- Project Five -->
     <div class="row">
       <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/18.jpg" %}" alt="">
+        <a href="/recommend3_4">
+          <img src="{% static "blog/img/태그/미스티크메인.PNG" %}" alt="" width="630" height="300">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>5. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <h3>5. 미스티크<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.0</span></h3>
+        <a style="color: #D5D4D4;">경상남도 통영시 산양읍 연화리 194</a>
+        <p>Unknown</p>
+        <a class="btn btn-primary" href="/recommend3_4">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -180,14 +184,15 @@
     <!-- Project Six -->
     <div class="row">
       <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/19.jpg" %}" alt="">
+        <a href="/recommend3_4">
+          <img src="{% static "blog/img/태그/테일러커피메인.PNG" %}" alt="" width="630" height="300">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>6. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <h3>6. 테일러커피 연남1호점<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.0</span></h3>
+        <a style="color: #D5D4D4;">서울특별시 마포구 연남동 224-41</a>
+        <p>Unknown</p>
+        <a class="btn btn-primary" href="/recommend3_4">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -205,8 +210,8 @@
       </div>
       <div class="col-md-5">
         <h3>7. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <p>Unknown</p>
+        <a class="btn btn-primary" href="#">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -224,8 +229,8 @@
       </div>
       <div class="col-md-5">
         <h3>8. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <p>Unknown</p>
+        <a class="btn btn-primary" href="#">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -243,10 +248,10 @@
         </a>
       </li>
       <li class="page-item">
-        <a class="page-link" href="#">1</a>
+        <a class="page-link" href="/recommendation3">1</a>
       </li>
       <li class="page-item">
-        <a class="page-link" href="#">2</a>
+        <a class="page-link" href="/recommendation1_2">2</a>
       </li>
       <li class="page-item">
         <a class="page-link" href="#">3</a>

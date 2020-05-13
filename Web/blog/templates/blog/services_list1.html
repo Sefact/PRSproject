@@ -70,7 +70,7 @@
   <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">유저
+    <h1 class="mt-4 mb-3">인기 순위
       <small>추천장소</small>
     </h1>
 
@@ -78,20 +78,24 @@
       <li class="breadcrumb-item">
         <a href="{% url 'index' %}">Home</a>
       </li>
-      <li class="breadcrumb-item active">유저 추천</li>
+      <li class="breadcrumb-item">
+        <a href="/services">Tag</a>
+      </li>
+      <li class="breadcrumb-item active">카페</li>
     </ol>
 
     <!-- Project One -->
     <div class="row">
       <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/14.jpg" %}" alt="">
+        <a href="/recommend1_1">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/14.jpeg" %}" alt="">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>1. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <h3>1. 카페<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;0.0</span></h3>
+        <a style="color: #D5D4D4;">경기도 시흥시 정왕동</a>
+        <p>설명</p>
+        <a class="btn btn-primary" href="/recommend1_1">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -103,14 +107,15 @@
     <!-- Project Two -->
     <div class="row">
       <div class="col-md-7">
-        <a href="#">
+        <a href="/recommend1_2">
           <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/15.jpg" %}" alt="">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>2. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <h3>2. 카페<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;5.0</span></h3>
+        <a style="color: #D5D4D4;">경기도 시흥시 정왕동</a>
+        <p>설명</p>
+        <a class="btn btn-primary" href="/recommend1_2">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -122,14 +127,15 @@
     <!-- Project Three -->
     <div class="row">
       <div class="col-md-7">
-        <a href="#">
+        <a href="/recommend1_3">
           <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/16.jpg" %}" alt="">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>3. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <h3>3. 카페<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;5.0</span></h3>
+        <a style="color: #D5D4D4;">경기도 시흥시 정왕동</a>
+        <p>설명</p>
+        <a class="btn btn-primary" href="/recommend1_2">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -147,9 +153,10 @@
         </a>
       </div>
       <div class="col-md-5">
-        <h3>4. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <h3>4. 카페<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;5.0</span></h3>
+        <a style="color: #D5D4D4;">경기도 시흥시 정왕동</a>
+        <p>설명</p>
+        <a class="btn btn-primary" href="/recommend1_2">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -166,9 +173,10 @@
         </a>
       </div>
       <div class="col-md-5">
-        <h3>5. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <h3>5. 카페<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;5.0</span></h3>
+        <a style="color: #D5D4D4;">경기도 시흥시 정왕동</a>
+        <p>설명</p>
+        <a class="btn btn-primary" href="/recommend1_2">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -185,9 +193,10 @@
         </a>
       </div>
       <div class="col-md-5">
-        <h3>6. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <h3>6. 카페<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;5.0</span></h3>
+        <a style="color: #D5D4D4;">경기도 시흥시 정왕동</a>
+        <p>설명</p>
+        <a class="btn btn-primary" href="/recommend1_2">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -204,9 +213,10 @@
         </a>
       </div>
       <div class="col-md-5">
-        <h3>7. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <h3>7. 카페<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;5.0</span></h3>
+        <a style="color: #D5D4D4;">경기도 시흥시 정왕동</a>
+        <p>설명</p>
+        <a class="btn btn-primary" href="/recommend1_2">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -223,9 +233,10 @@
         </a>
       </div>
       <div class="col-md-5">
-        <h3>8. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
+        <h3>8. 카페<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;5.0</span></h3>
+        <a style="color: #D5D4D4;">경기도 시흥시 정왕동</a>
+        <p>설명</p>
+        <a class="btn btn-primary" href="/recommend1_2">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -243,10 +254,10 @@
         </a>
       </li>
       <li class="page-item">
-        <a class="page-link" href="#">1</a>
+        <a class="page-link" href="/recommendation1">1</a>
       </li>
       <li class="page-item">
-        <a class="page-link" href="#">2</a>
+        <a class="page-link" href="/recommendation1_2">2</a>
       </li>
       <li class="page-item">
         <a class="page-link" href="#">3</a>
