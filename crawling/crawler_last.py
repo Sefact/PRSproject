@@ -22,18 +22,18 @@ driver.get(url)
 time.sleep(3)
 
 #==================================================================================================
-# 자동로그인
+# 자동로그인... 인스타그램 로그인 단계가 늘어남으로 오류가 생겨서 보류
 #login_section = '//*[@id="react-root"]/section/nav/div[2]/div/div/div[3]/div/span/a[1]/button'
 #driver.find_element_by_xpath(login_section).click()
 #time.sleep(2)
 
 #elem_login = driver.find_element_by_name("username")
 #elem_login.clear()
-#elem_login.send_keys('kdk1065@naver.com')
+#elem_login.send_keys('ID') #내 인스타 아이디
 
 #elem_login = driver.find_element_by_name('password')
 #elem_login.clear()
-#elem_login.send_keys('asdee!1065')
+#elem_login.send_keys('PASSWORD') #내 인스타 비밀번호
 #time.sleep(2)
 
 #xpath = """//*[@id="react-root"]/section/main/div/article/div/div[1]/div/form/div[4]/button"""
@@ -127,5 +127,3 @@ for i in tqdm(range(total_tag_data)):
 #==================================================================================================
 
 driver.close() # Chrome Driver 종료
-
-# tag검색 : 데이트추천맛집
