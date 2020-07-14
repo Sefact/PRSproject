@@ -35,10 +35,10 @@
             <a class="nav-link" href="/introduce">Introduce</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/services">Tag</a>
+            <a class="nav-link" href="/tag">Tag</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">FAQ</a>
+            <a class="nav-link" href="/contact">Contact</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,9 +46,9 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
               <a class="dropdown-item" href="/recommendation1">인기 순위</a>
-              <a class="dropdown-item" href="/recommendation2">유저 추천</a>
+              <a class="dropdown-item" href="/recommendation2">지역별 추천</a>
               <a class="dropdown-item" href="/recommendation3">에디터 추천</a>
-              <a class="dropdown-item" href="/recommendation4">회원 맞춤형</a>
+              <a class="dropdown-item" href="/recommendation4">맞춤형 추천</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -56,10 +56,12 @@
               User
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-              <a class="dropdown-item" href="/full-width">Sign in</a>
-              <a class="dropdown-item" href="/sidebar">Sign up</a>
-              <a class="dropdown-item" href="/faq">Privacy</a>
-              <a class="dropdown-item" href="/404">Calendar</a>
+              {% if request.session.user %}
+                <a class="dropdown-item" href="/users/logout">Logout</a>
+              {% else %}
+                <a class="dropdown-item" href="/users/login">Login</a>
+                <a class="dropdown-item" href="/users/register/">Sign up</a>
+              {% endif %}
             </div>
           </li>
         </ul>
@@ -72,12 +74,12 @@
 
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3">About
-      <small>Subheading</small>
+      <small>Chicken POP</small>
     </h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="index.html">Home</a>
+        <a href="{% url 'index' %}">Home</a>
       </li>
       <li class="breadcrumb-item active">Introduce</li>
     </ol>
@@ -85,13 +87,14 @@
     <!-- Intro Content -->
     <div class="row">
       <div class="col-lg-6">
-        <img class="img-fluid rounded mb-4" src="{% static "blog/img/10.jpg" %}" alt="">
+        <img class="img-fluid rounded mb-4" src="{% static "blog/img/10.jpg" %}" height="400" alt="">
       </div>
       <div class="col-lg-6">
         <h2>About Chicken POP</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+        <p>Chicken POP은 서비스를 사용하는 사용자들의 취향을 반영하여 맞춤형 장소에 대한 서비스를 제공하는 사이트이다</p>
+        <p>기본적인 개발 목적으로는 현대 사회에서 방대한 양의 데이터가 존재함에 따라 사람들이 결정에 대한 어려움을 겪는 것을 문제점으로 파악하여 개발하게 되었으며</p>
+        <p>장소를 중점으로 두어서 각기 다른 태그에 대한 장소 추천과 에디터의 직접적인 장소 추천 회원간의 맞춤형 추천 등의 서비스를 지원하고 있다.</p>
+        <p>추가적으로 캘린더를 통한 일정(행사) 관리 기능 지역을 세분화하여서 장소에 대한 정보를 제공하는 서비스 등을 제공한다.</p>
       </div>
     </div>
     <!-- /.row -->
@@ -106,10 +109,10 @@
           <div class="card-body">
             <h4 class="card-title">김효연</h4>
             <h6 class="card-subtitle mb-2 text-muted">조장</h6>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+            <p class="card-text"><hr>연락처: 010-4037-4448<br>역할: 프로젝트 관리 및 계획, 웹 구현<br>사용 언어: C, Python</p>
           </div>
           <div class="card-footer">
-            <a href="#">name@example.com</a>
+            <a href="#">lime17442@gmail.com</a>
           </div>
         </div>
       </div>
@@ -119,7 +122,7 @@
           <div class="card-body">
             <h4 class="card-title">김기원</h4>
             <h6 class="card-subtitle mb-2 text-muted">조원</h6>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+            <p class="card-text"><hr>연락처: 010-4563-8116<br>역할: DB설계 및 기능 구현, 서비스 테스트<br>사용 언어: C, C++, Python</p>
           </div>
           <div class="card-footer">
             <a href="#">name@example.com</a>

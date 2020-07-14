@@ -1,0 +1,277 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Modern Business - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href='{% static "blog/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href='{% static "blog/css/modern-business.css" %}' rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">Chicken POP</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/introduce">Introduce</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tag">Tag</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Recomendation
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="/recommendation1">인기 순위</a>
+              <a class="dropdown-item" href="/recommendation2">지역별 추천</a>
+              <a class="dropdown-item" href="/recommendation3">에디터 추천</a>
+              <a class="dropdown-item" href="/recommendation4">맞춤형 추천</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              User
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              {% if request.session.user %}
+                <a class="dropdown-item" href="/users/logout">Logout</a>
+              {% else %}
+                <a class="dropdown-item" href="/users/login">Login</a>
+                <a class="dropdown-item" href="/users/register/">Sign up</a>
+              {% endif %}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">태그별
+      <small>장소 선정</small>
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'index' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="/tag">Tag</a>
+      </li>
+      <li class="breadcrumb-item active">연극</li>
+    </ol>
+
+    <!-- Project One -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/tag4_1">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/taglist/four/01.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>1. 낙산씨어터<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.1</span></h3>
+        <a style="color: #D5D4D4;">서울특별시 종로구 혜화동 201</a>
+        <p></p>
+        <p><hr>주소 : 서울특별시 종로구 혜화동 201<br>
+                전화번호 : 010-4255-4199<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 평일 19:30<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    주말 15:00, 18:00</p>
+        <a class="btn btn-primary" href="/tag4_1">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Two -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/tag4_2">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/taglist/four/02.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>2. 키득키득 아트홀<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.2</span></h3>
+        <a style="color: #D5D4D4;">서울 종로구 동숭동 128-5 호은빌딩 지하 1층</a>
+        <p></p>
+        <p><hr>주소 : 서울 종로구 동숭동 128-5 호은빌딩 지하 1층<br>
+                전화번호 : 02-3673-1650<br>
+                주차 : 주차공간없음<br>
+                영업시간 : 15:30, 17:30, 19:30<br>
+                입장료 : 7000원</p>
+        <a class="btn btn-primary" href="/tag4_2">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Three -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/tag4_3">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/taglist/four/03.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>3. 디큐브아트센터<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.3</span></h3>
+        <a style="color: #D5D4D4;">서울특별시 구로구 경인로 662 (신도림동 692)</a>
+        <p>최첨단 뮤지컬 전용극장 디큐브씨어터를 통해 검증된 뮤지컬 작품들을 소개함은 물론, 로비와 야외공간을 활용하여 다양한 프로그램을 개최함으로써 새로운 문화예술공간의 창출한다.</p>
+        <p><hr>주소 : 서울특별시 구로구 경인로 662 (신도림동 692)<br>
+                전화번호 : 02-2211-3000<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 09:00 ~ 22:00</p>
+          <a class="btn btn-primary" href="/tag4_3">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Four -->
+    <div class="row">
+
+      <div class="col-md-7">
+        <a href="/tag4_4">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/taglist/four/04.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>4. 예술의전당<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.3</span></h3>
+        <a style="color: #D5D4D4;">서울시 서초구 남부순환로 2406 예술의전당 (우 06757)</a>
+        <p>예술가에게는 예술적 영감이 샘솟는 곳, 관객들에게는 잊지 못할 감동을 선사하는 문화융성의 본산</p>
+        <p><hr>주소 : 서울시 서초구 남부순환로 2406 예술의전당 (우 06757)
+                전화번호 : 02-580-1300<br>
+                주차 : 주차장(5시간 6000원)<br>
+                영업시간 : 09:00 ~ 20:00<br></p>
+        <a class="btn btn-primary" href="/tag4_4">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Five -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/tag4_5">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/taglist/four/05.jpg" %}" width="800" height="400" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>5. 세종문화회관<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.4</span></h3>
+        <a style="color: #D5D4D4;">서울특별시 종로구 세종대로 175 (세종로) 세종문화회관 (우)03172</a>
+        <p>문화향유 기회를 확대하고, 문화 창달에 기여할 수 있는 문화예술 운영을 통해 시민문화 복지구현에 이바지함을 설립목적으로 시민이 더 행복한 예술 랜드마크</p>
+        <p><hr>주소 : 서울특별시 종로구 세종대로 175 (세종로)<br>
+                전화번호 : 02-399-1000<br>
+                주차 : 주차장(4시간 4천원)<br>
+                영업시간 : 10:00 ~ 20:00, 월요일 휴무<br></p>
+        <a class="btn btn-primary" href="/tag4_5">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Six -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/tag4_6">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/taglist/four/06.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>6. 롯데 콘서트홀<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.5</span></h3>
+        <a style="color: #D5D4D4;">서울시 송파구 올림픽로 300 롯데월드몰 8층 롯데콘서트홀</a>
+        <p>음악을 통해 일상 속 작은 행복을 느낄 수 있는 편안한 공간이 될 것이며, 대한민국 공연 문화의 중심으로 국내 클래식 시장의 새로운 장을 열었다</p>
+        <p><hr>주소 : 서울시 송파구 올림픽로 300 롯데월드몰 8층 롯데콘서트홀<br>
+                전화번호 : 1544-7744<br>
+                주차 : 주차장(10분당 500원)<br>
+                영업시간 : 10:30 ~ 19:00</p>
+        <a class="btn btn-primary" href="/tag4_6">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/recommendation1">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/recommendation1_2">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src='{% static "blog/vendor/jquery/jquery.min.js" %}'></script>
+  <script src='{% static "blog/vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
+
+</body>
+
+</html>

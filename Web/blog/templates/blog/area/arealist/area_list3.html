@@ -1,0 +1,279 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Modern Business - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href='{% static "blog/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href='{% static "blog/css/modern-business.css" %}' rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">Chicken POP</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/introduce">Introduce</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tag">Tag</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Recomendation
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="/recommendation1">인기 순위</a>
+              <a class="dropdown-item" href="/recommendation2">지역별 추천</a>
+              <a class="dropdown-item" href="/recommendation3">에디터 추천</a>
+              <a class="dropdown-item" href="/recommendation4">맞춤형 추천</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              User
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              {% if request.session.user %}
+                <a class="dropdown-item" href="/users/logout">Logout</a>
+              {% else %}
+                <a class="dropdown-item" href="/users/login">Login</a>
+                <a class="dropdown-item" href="/users/register/">Sign up</a>
+              {% endif %}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">부산</h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'index' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="/recommendation2">Area</a>
+      </li>
+      <li class="breadcrumb-item active">부산</li>
+    </ol>
+
+    <!-- Project One -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area3_1">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/three/01.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>1. 감천문화마을<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.3</span></h3>
+        <a style="color: #D5D4D4;">부산광역시 사하구 감내2로 203 감천문화마을안내센터</a>
+        <p>산자락을 따라 빼곡하게 들어선 계단식 주택과 미로 같은 골목길은 마치 미로 속에 온 것 같이 계속해서 다른 길로 이어져요. 특히 골목이 좁아 연인과 저절로 바짝 붙어 걷게 돼요. 끝이 안 날 것 같은 골목을 통과해 산 위에 오르면 알록달록한 감천문화마을의 화려하고 독특한 풍경을 한눈에 볼 수 있어 장관이에요. 영화의 배경이 될 만큼 독특한 풍경은 이곳을 걷는 매 순간을 특별한 경험으로 만들어 줘요.</p>
+        <p><hr>주소 : 부산광역시 사하구 감내2로 203 감천문화마을안내센터<br>
+                전화번호 : 051-204-1444<br>
+                주차 : 주차장(1시간 4000원)<br>
+                영업시간 : 09:00 ~ 18:00<br>
+                입장료 : 2000원</p>
+        <a class="btn btn-primary" href="/area3_1">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Two -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area3_2">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/three/02.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>2. 태종대<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.3</span></h3>
+        <a style="color: #D5D4D4;">부산광역시 영도구 전망로 24</a>
+        <p>일제강점기에는 군 요새지이기도 했던 태종대는 맑은 날이면 일본의 쓰시마 섬까지 볼 수 있을 정도로 시원한 해안선이 매력이에요. 관광 열차인 다누비 열차의 첫 정류장인 전망대에서는 지질 공원으로 지정될 만큼 독특한 태종대 절벽을 내려다 볼 수 있어요. 영도 등대 주변은 나무가 무성해 울창한 숲을 걸어 들어가는 기분이 들어요. 인근 태종사 역시 다누비 열차로 갈 수 있어 넓은 태종대 인근을 편안하게 관광할 수 있어요.</p>
+        <p><hr>주소 : 부산광역시 영도구 전망로 24<br>
+                전화번호 : 051-405-2004<br>
+                주차 : 주차장(2000원)<br>
+                영업시간 : 04:00 ~ 24:00<br>
+                입장료 : 무료</p>
+        <a class="btn btn-primary" href="/area3_2">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Three -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area3_3">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/three/03.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>3. 송정 해수욕장<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.2</span></h3>
+        <a style="color: #D5D4D4;">부산광역시 해운대구 송정동 712-2</a>
+        <p>송정 해수욕장은 적당한 파도와 깨끗한 모래사장으로 서핑이나 해수욕을 즐기는 사람이 많아요. 한가운데에 투명한 유리 바닥이 있어 더욱더 아찔한 바다전망대에 올라 끝없는 바다와 노을을 감상하세요. 특히 주변에 뷰가 좋은 카페나 식당이 많아 데이트를 즐기는 연인들에게도 인기예요. 멋진 풍경 덕분에 앉아 있는 것만으로도 행복해질 거예요. 서핑이나 해수욕을 즐기는 사람들의 모습까지도 낭만적이랍니다.</p>
+        <p><hr>주소 : 부산광역시 해운대구 송정동 712-2<br>
+                전화번호 : 051-749-7615<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 09:00 ~ 18:00<br>
+                입장료 : 5000원</p>
+        <a class="btn btn-primary" href="/area3_3">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Four -->
+    <div class="row">
+
+      <div class="col-md-7">
+        <a href="/area3_4">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/three/04.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>4. 전포 카페거리<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.2</span></h3>
+        <a style="color: #D5D4D4;">부산광역시 부산진구 동천로 92</a>
+        <p>동천로 인근 전포성당 주변에는 독특한 개성을 뽐내는 다양한 카페가 모여 있어 전포 카페거리라고 불려요. 아름다운 카페들 덕분에 걷기만 해도 기분이 좋아지지만, 봄이면 커피를 테마로 한 축제가 열리고, 가을이면 노랗게 물드는 은행나무 축제가 열리는 등 방문하는 사람들이 즐거워할 문화 행사가 자주 열리는 것도 특징이에요. 달콤한 커피 향기가 풍기는 낭만적인 이곳에 연인과 함께 방문하는 건 어떨까요?</p>
+        <p><hr>주소 : 부산광역시 부산진구 동천로 92<br>
+                전화번호 : 051-605-4021<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 10:00 ~ 24:00<br>
+                입장료 : 무료</p>
+        <a class="btn btn-primary" href="/area3_4">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Five -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area3_5">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/three/05.jpg" %}" width="800" height="400" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>5. 오륙도 스카이워크<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.2</span></h3>
+        <a style="color: #D5D4D4;">부산 남구 오륙도로 137</a>
+        <p>긴 해안선을 만끽할 수 있도록 조성된 이기대 수변공원에는 해안을 따라 걷기 좋게 개발된 산책로 코스가 여럿 있어요. 산책로를 따라 해안가를 걷다 보면 바다를 향해 뻗어 있는 오륙도 스카이워크가 나타나요. 바닥과 난간이 전부 유리로 되어 있어 길이는 짧지만 아찔한 체험을 하게 될 거예요. 코스마다 다양한 풍경을 감상할 수 있고 꽤 면적이 넓으니 편안한 신발을 신고 도전해 보세요.</p>
+        <p><hr>주소 : 부산 남구 오륙도로 137<br>
+                전화번호 : 051-607-6395<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 09:00 ~ 19:00<br>
+                입장료 : 무료</p>
+        <a class="btn btn-primary" href="/area3_5">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Six -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area3_6">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/three/01.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>6. 아난티코브<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.6</span></h3>
+        <a style="color: #D5D4D4;">부산광역시 기장군 기장읍 기장해안로 268-31</a>
+        <p>기장 힐튼 호텔 옆의 아난티코브는 대규모 온천과 호텔, 북카페 등이 한자리에 모인 복합 리조트로 투숙객이 아니어도 오가는 사람이 많아요. 건물 내부는 화려하고 바다를 바라보는 전망이 특히 훌륭하니 특별한 날이라면 연인과 함께 방문해 보는 건 어떨까요? 멋진 자연 풍경을 감상할 수 있는 해안 산책로도 가깝고 수영장이 있어 건강하게 힐링하고 싶은 사람에게도 추천해요.</p>
+        <p><hr>주소 : 부산광역시 기장군 기장읍 기장해안로 268-31<br>
+                전화번호 : 051-604-7000<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 00:00 ~ 24:00<br>
+                입장료 : 성인 80000원, 청소년 40000원</p>
+        <a class="btn btn-primary" href="/area3_6">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/recommendation1">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/recommendation1_2">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src='{% static "blog/vendor/jquery/jquery.min.js" %}'></script>
+  <script src='{% static "blog/vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
+
+</body>
+
+</html>

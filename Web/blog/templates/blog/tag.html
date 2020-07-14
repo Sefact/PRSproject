@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Modern Business - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href='{% static "blog/vendor/bootstrap/css/bootstrap.min.css"%}' rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href='{% static "blog/css/modern-business.css" %}' rel="stylesheet">
+
+</head>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">Chicken POP</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/introduce">Introduce</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tag">Tag</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Recomendation
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="/recommendation1">인기 순위</a>
+              <a class="dropdown-item" href="/recommendation2">지역별 추천</a>
+              <a class="dropdown-item" href="/recommendation3">에디터 추천</a>
+              <a class="dropdown-item" href="/recommendation4">맞춤형 추천</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              User
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              {% if request.session.user %}
+                <a class="dropdown-item" href="/users/logout">Logout</a>
+              {% else %}
+                <a class="dropdown-item" href="/users/login">Login</a>
+                <a class="dropdown-item" href="/users/register/">Sign up</a>
+              {% endif %}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">태그별  
+      <small>장소 선정</small>
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'index' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item active">Tag</li>
+    </ol>
+
+    <!-- Image Header -->
+    <div class="row">
+      <div class="col-lg-4 col-sm-4 portfolio-item">
+        <div class="card h-100">
+          <a href="/tag_list1"><img class="card-img-top" src="{% static "blog/img/taglist/01.jpeg" %}" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/tag_list1">카페</a>
+            </h4>
+            <p class="card-text">솔직한 리뷰로 뜯어보는 카페 리스트 <br>"숨은 맛집 발굴! <오늘의 리뷰> 선정카페"</p>
+          </div>
+          <div class="card-footer">
+            <a href="/tag_list1" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="/tag_list2"><img class="card-img-top" src="{% static "blog/img/taglist/02.jpeg" %}" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/tag_list2">미술관</a>
+            </h4>
+            <p class="card-text">현재 핫한 작가들의 미술 전시회 <br>"근대에서 현대미술, <취향저격 전시회>"</p>
+          </div>
+          <div class="card-footer">
+            <a href="/tag_list2" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="/tag_list3"><img class="card-img-top" src="{% static "blog/img/taglist/03.jpeg" %}" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/tag_list3">음식점</a>
+            </h4>
+            <p class="card-text">성공률 100프로의 추천 맛집 <br>"안가보면 손해 실패할 수가 없는 유명 맛집"</p>
+          </div>
+          <div class="card-footer">
+            <a href="/tag_list3" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="/tag_list4"><img class="card-img-top" src="{% static "blog/img/taglist/04.jpeg" %}" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/tag_list4">연극</a>
+            </h4>
+            <p class="card-text">해외 유명 연극의 내한 <br>"박수를 칠수 밖에 없게 하는 수준의 뮤지컬"</p>
+          </div>
+          <div class="card-footer">
+            <a href="/tag_list4" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="/tag_list5"><img class="card-img-top" src="{% static "blog/img/taglist/05.jpeg" %}" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/tag_list5">방탈출</a>
+            </h4>
+            <p class="card-text">손에 땀을 쥐게 하는 스릴 방탈출 카페<br>"TV 예능 <방탈출> 직접 체험"</p>
+          </div>
+          <div class="card-footer">
+            <a href="/tag_list5" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="/tag_list6"><img class="card-img-top" src="{% static "blog/img/taglist/06.jpeg" %}" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/tag_list6">여행</a>
+            </h4>
+            <p class="card-text">국내부터 해외까지 여행 장소추천 <br>"나만 알고 싶은 <히든 장소> 탐구"</p>
+          </div>
+          <div class="card-footer">
+            <a href="/tag_list6" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src='{% static "blog/vendor/jquery/jquery.min.js" %}'></script>
+  <script src='{% static "blog/vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
+  <script src='{% static "blog/vendor/bootstrap/js/bootstrap.min.js" %}'></script>
+
+</body>
+
+</html>

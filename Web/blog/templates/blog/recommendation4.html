@@ -34,10 +34,10 @@
             <a class="nav-link" href="/introduce">Introduce</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/services">Tag</a>
+            <a class="nav-link" href="/tag">Tag</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">FAQ</a>
+            <a class="nav-link" href="/contact">Contact</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,9 +45,9 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
               <a class="dropdown-item" href="/recommendation1">인기 순위</a>
-              <a class="dropdown-item" href="/recommendation2">유저 추천</a>
+              <a class="dropdown-item" href="/recommendation2">지역별 추천</a>
               <a class="dropdown-item" href="/recommendation3">에디터 추천</a>
-              <a class="dropdown-item" href="/recommendation4">회원 맞춤형</a>
+              <a class="dropdown-item" href="/recommendation4">맞춤형 추천</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -55,10 +55,12 @@
               User
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-              <a class="dropdown-item" href="/full-width">Sign in</a>
-              <a class="dropdown-item" href="/sidebar">Sign up</a>
-              <a class="dropdown-item" href="/faq">Privacy</a>
-              <a class="dropdown-item" href="/404">Calendar</a>
+              {% if request.session.user %}
+                <a class="dropdown-item" href="/users/logout">Logout</a>
+              {% else %}
+                <a class="dropdown-item" href="/users/login">Login</a>
+                <a class="dropdown-item" href="/users/register/">Sign up</a>
+              {% endif %}
             </div>
           </li>
         </ul>
@@ -70,29 +72,25 @@
   <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">회원
-      <small>맞춤형</small>
+    <h1 class="mt-4 mb-3">맞춤형
     </h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <a href="{% url 'index' %}">Home</a>
       </li>
-      <li class="breadcrumb-item active">회원 맞춤형</li>
+      <li class="breadcrumb-item active">맞춤형</li>
     </ol>
 
     <!-- Project One -->
     <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/14.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>1. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
+      <div class="col-md-12">
+        <a href="/recommend4_1">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/recommend/four/01.jpg" %}" alt="">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>헤이리마을</h3>
+            <p>국내 최대 규모의 예술마을로 많은 예술인들의 작업장 및 전시장, 공연장, 갤러리</p>
+          </div>
         </a>
       </div>
     </div>
@@ -102,16 +100,13 @@
 
     <!-- Project Two -->
     <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/15.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>2. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
+      <div class="col-md-12">
+        <a href="/recommend4_2">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/recommend/four/02.jpg" %}" alt="">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>대전엑스포 시민광장</h3>
+            <p>도시락을 먹으며 연인과 함께 자전거를 타며 알찬 하루를 보내보자</p>
+          </div>
         </a>
       </div>
     </div>
@@ -121,112 +116,13 @@
 
     <!-- Project Three -->
     <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/16.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>3. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Four -->
-    <div class="row">
-
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/17.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>4. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Five -->
-    <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/18.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>5. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Six -->
-    <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/19.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>6. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Seven -->
-    <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/20.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>7. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Eight -->
-    <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/21.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>8. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
+      <div class="col-md-12">
+        <a href="/recommend4_3">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/recommend/four/04.jpg" %}" alt="">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>남이섬</h3>
+            <p>자전거를 타면서 섬을 돌아보고 자연에서 힐링해보는건 어떤가</p>
+          </div>
         </a>
       </div>
     </div>
@@ -243,7 +139,7 @@
         </a>
       </li>
       <li class="page-item">
-        <a class="page-link" href="#">1</a>
+        <a class="page-link" href="/recommendation4">1</a>
       </li>
       <li class="page-item">
         <a class="page-link" href="#">2</a>

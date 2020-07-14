@@ -1,0 +1,279 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Modern Business - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href='{% static "blog/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href='{% static "blog/css/modern-business.css" %}' rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">Chicken POP</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/introduce">Introduce</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tag">Tag</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Recomendation
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="/recommendation1">인기 순위</a>
+              <a class="dropdown-item" href="/recommendation2">지역별 추천</a>
+              <a class="dropdown-item" href="/recommendation3">에디터 추천</a>
+              <a class="dropdown-item" href="/recommendation4">맞춤형 추천</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              User
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              {% if request.session.user %}
+                <a class="dropdown-item" href="/users/logout">Logout</a>
+              {% else %}
+                <a class="dropdown-item" href="/users/login">Login</a>
+                <a class="dropdown-item" href="/users/register/">Sign up</a>
+              {% endif %}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">대전</h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'index' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="/recommendation2">Area</a>
+      </li>
+      <li class="breadcrumb-item active">대전</li>
+    </ol>
+
+    <!-- Project One -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area5_1">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/five/01.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>1. 탭그라운드<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.0</span></h3>
+        <a style="color: #D5D4D4;">대전광역시 중구 은행동 48-2</a>
+        <p>영화, 보드게임, 만화책, 탁구, 포켓볼 이 모든 걸 한 곳에서, 커피도 마시면서 게임도 하는 이색카페</p>
+        <p><hr>주소 : 대전광역시 중구 은행동 48-2<br>
+                전화번호 : 042-222-1989<br>
+                주차 : 주차공간없음<br>
+                영업시간 : 12:30 ~ 23:00<br>
+                입장료 : 7000원</p>
+        <a class="btn btn-primary" href="/area5_1">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Two -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area5_2">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/five/02.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>2. 버드소리<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.1</span></h3>
+        <a style="color: #D5D4D4;">대전광역시 서구 도안동로 3</a>
+        <p>버드소리는 음료한잔에 데이트와 앵무새를 체험할 수 있는 이색테마카페로</p>
+        <p><hr>주소 : 대전광역시 서구 도안동로 3<br>
+                전화번호 : 042-544-6007<br>
+                종류 : 베이커리, 카페<br>
+                주차 : 주차공간없음<br>
+                영업시간 : 11:00 ~ 21:00</p>
+        <a class="btn btn-primary" href="/area5_2">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Three -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area5_3">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/five/03.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>3. MEEK MATT<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.2</span></h3>
+        <a style="color: #D5D4D4;">대전광역시 서구 용소로39번길 70</a>
+        <p>대전의 가수원동에 위치한 핫플 카페로 다쿠아즈와 아인슈페너가 맛있는 곳, 밀크티, 다쿠아즈, 아인슈페너에요!! 맛도 보장되는데 정말 이뻐서 찍히는 감성이 바로 인스타 업로드 GO GO</p>
+        <p><hr>주소 : 대전광역시 서구 용소로39번길 70<br>
+                전화번호 : 070-8777-0304<br>
+                종류 : 베이커리, 카페<br>
+                주차 : 주차공간없음<br>
+                영업시간 : 10:00 ~ 22:00</p>
+        <a class="btn btn-primary" href="/area5_3">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Four -->
+    <div class="row">
+
+      <div class="col-md-7">
+        <a href="/area5_4">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/five/04.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>4. 으능정이 문화거리<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.6</span></h3>
+        <a style="color: #D5D4D4;">대전광역시 은행동</a>
+        <p>초대형 스크린이 인상적인 거리, 밤거리를 화려하게 비추는 초대형 LED 영상 아케이드 구조물과 스카이로드와 함께 맛집들이 즐비하다.</p>
+        <p><hr>주소 : 대전광역시 서구 만년동 둔산대로 169<br>
+                전화번호 : 042-250-1400<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 00:00 ~ 24:00<br>
+                입장료 : 무료</p>
+        <a class="btn btn-primary" href="/area5_4">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Five -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area5_5">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/five/05.jpg" %}" width="800" height="400" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>5. 대전엑스포 시민광장<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;5.0</span></h3>
+        <a style="color: #D5D4D4;">대전광역시 서구 만년동 둔산대로 169</a>
+        <p>나들이하기 좋은 광장. 잔디 위에서 집에서 싸온 도시락을 먹으며 연인과 함께 자전거를 타며 알찬 하루를 보내세요</p>
+        <p><hr>주소 : 대전광역시 서구 만년동 둔산대로 169<br>
+                전화번호 : 042-250-1400<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 00:00 ~ 24:00<br>
+                입장료 : 무료</p>
+        <a class="btn btn-primary" href="/area5_5">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Six -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area5_6">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/five/06.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>6. 벽화마을 새마을동네<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;3.6</span></h3>
+        <a style="color: #D5D4D4;">대전광역시 유성구 구암동 424-29</a>
+        <p>총 5가지 테마로 구성되어있는 벽화마을 새마을동네. 큰 규모의 벽화마을이면서 아기자기한 예쁜 벽화들이 가득찬 곳</p>
+        <p><hr>주소 : 대전광역시 유성구 구암동 424-29<br>
+                전화번호 : 없음<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 10:00 ~ 23:00<br>
+                입장료 : 무료</p>
+        <a class="btn btn-primary" href="/area5_6">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/recommendation1">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/recommendation1_2">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src='{% static "blog/vendor/jquery/jquery.min.js" %}'></script>
+  <script src='{% static "blog/vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
+
+</body>
+
+</html>

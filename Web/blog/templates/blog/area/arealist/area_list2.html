@@ -1,0 +1,279 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Modern Business - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href='{% static "blog/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href='{% static "blog/css/modern-business.css" %}' rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">Chicken POP</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/introduce">Introduce</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tag">Tag</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Recomendation
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="/recommendation1">인기 순위</a>
+              <a class="dropdown-item" href="/recommendation2">지역별 추천</a>
+              <a class="dropdown-item" href="/recommendation3">에디터 추천</a>
+              <a class="dropdown-item" href="/recommendation4">맞춤형 추천</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              User
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              {% if request.session.user %}
+                <a class="dropdown-item" href="/users/logout">Logout</a>
+              {% else %}
+                <a class="dropdown-item" href="/users/login">Login</a>
+                <a class="dropdown-item" href="/users/register/">Sign up</a>
+              {% endif %}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">인천</h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'index' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="/recommendation2">Area</a>
+      </li>
+      <li class="breadcrumb-item active">인천</li>
+    </ol>
+
+    <!-- Project One -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area2_1">
+          <img class="img-fluid" src="{% static "blog/img/arealist/two/01.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>1. 롤캣<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;5.0</span></h3>
+        <a style="color: #D5D4D4;">인천광역시 남구 독배로 443 삼화복합빌딩 지하1층</a>
+        <p>옛 기억을 되살리는 복고풍 컨셉의 롤러 스케이트장, 엄마 아빠가 왠지 여기서 만났을 것 같은 느낌이다.</p>
+        <p><hr>주소 : 인천광역시 남구 독배로 443 삼화복합빌딩 지하1층<br>
+                전화번호 : 032-888-2685<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 11:00 ~ 22:00<br>
+                입장료 : 성인 10000원, 청소년 8000원</p>
+        <a class="btn btn-primary" href="/area2_1">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Two -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area2_2">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/two/02.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>2. 월미테마파크<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.3</span></h3>
+        <a style="color: #D5D4D4;">인천광역시 중구 북성동 1가 98-580</a>
+        <p>월미도는 본래 섬이었으나 축대를 쌓아 연결함으로써 이동이 편리하여 놀이기구 및 유흥시설이 들어섰다. 문화의 거리가 조성된 이후로 각종 문화예술 공연 및 축제들이 열리고 있으며, 월미테마파크의 디스코팡팡이 유명하다.</p>
+        <p><hr>주소 : 인천광역시 중구 북성동 1가 98-580<br>
+                전화번호 : 032-761-0997<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 10:00 ~ 22:00<br>
+                입장료 : 5000원</p>
+        <a class="btn btn-primary" href="/area2_2">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Three -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area2_3">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/two/03.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>3. 차이나타운<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;3.8</span></h3>
+        <a style="color: #D5D4D4;">인천광역시 중구 차이나타운로59번길 12</a>
+        <p>한국에서 중국의 문화를 겪어 볼 수 있는 곳, 인천 속 작은 중국, 낮에도 좋지만 밤이면 야경이 예쁘다.</p>
+        <p><hr>주소 : 인천광역시 중구 차이나타운로59번길 12<br>
+                전화번호 : 032-777-1330<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 00:00 ~ 24:00<br>
+                입장료 : 성인 1000원, 청소년 700원, 어린이 500원</p>
+        <a class="btn btn-primary" href="/area2_3">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Four -->
+    <div class="row">
+
+      <div class="col-md-7">
+        <a href="/area2_4">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/two/04.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>4. 동화마을<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;3.9</span></h3>
+        <a style="color: #D5D4D4;">인천광역시 중구 송월동3가 자유공원서로45번길</a>
+        <p>실제 거주하고 있는 마을을 동화속 주인공들 그림으로 예쁘게 꾸며놓은 벽화마을, 아기자기하게 꾸며놓은 컨셉에 인생 샷을 남길 수 있는 기회</p>
+        <p><hr>주소 : 인천광역시 중구 송월동3가 자유공원서로45번길<br>
+                전화번호 : 032-764-7494<br>
+                주차 : 주차장(15분당 500원)<br>
+                영업시간 : 00:00 ~ 24:00<br>
+                입장료 : 무료</p>
+        <a class="btn btn-primary" href="/area2_4">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Five -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area2_5">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/two/05.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>5. 송도커넬워크<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;3.8</span></h3>
+        <a style="color: #D5D4D4;">인천광역시 연수구 아트센터대로 87 커넬워크 D4</a>
+        <p>쇼핑, 먹방, 인생샷 한곳에서 해결할 수 있는 복합문화공간, 가만히만 있어도 시간가는 줄 모르는 곳</p>
+        <p><hr>주소 : 인천광역시 연수구 아트센터대로 87 커넬워크 D4<br>
+                전화번호 : 10:30 ~ 21:00<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 032-723-6300<br>
+                입장료 : 무료</p>
+        <a class="btn btn-primary" href="/area2_5">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Six -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area2_6">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/arealist/two/06.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>6. 을왕리해수욕장<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;3.7</span></h3>
+        <a style="color: #D5D4D4;">인천광역시 중구 용유서로302번길 16-15</a>
+        <p>인천까지 가서 바다를 안 보고 올 순 없지. 낮과 밤의 아름다움이 다른 을왕리 해수욕장, 해수욕장 바로 앞 예쁜 카페들과 캠핑장, 밤바다를 보면서 조개구이를 먹는 즐거움을 말로 표현할 수 없다.</p>
+        <p><hr>주소 : 인천광역시 중구 용유서로302번길 16-15<br>
+                전화번호 : 031-746-4112<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 10:00 ~ 19:00<br>
+                입장료 : 무료</p>
+        <a class="btn btn-primary" href="/area2_6">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/recommendation1">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/recommendation1_2">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src='{% static "blog/vendor/jquery/jquery.min.js" %}'></script>
+  <script src='{% static "blog/vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
+
+</body>
+
+</html>

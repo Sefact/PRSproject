@@ -1,0 +1,281 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Modern Business - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href='{% static "blog/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href='{% static "blog/css/modern-business.css" %}' rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">Chicken POP</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/introduce">Introduce</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tag">Tag</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Recomendation
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="/recommendation1">인기 순위</a>
+              <a class="dropdown-item" href="/recommendation2">지역별 추천</a>
+              <a class="dropdown-item" href="/recommendation3">에디터 추천</a>
+              <a class="dropdown-item" href="/recommendation4">맞춤형 추천</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              User
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              {% if request.session.user %}
+                <a class="dropdown-item" href="/users/logout">Logout</a>
+              {% else %}
+                <a class="dropdown-item" href="/users/login">Login</a>
+                <a class="dropdown-item" href="/users/register/">Sign up</a>
+              {% endif %}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">태그별
+      <small>장소 선정</small>
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'index' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="/tag">Tag</a>
+      </li>
+      <li class="breadcrumb-item active">카페</li>
+    </ol>
+
+    <!-- Project One -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/tag1_1">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/taglist/one/01.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>1. 빵공장 라뜰리에 김가 원주점<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.0</span></h3>
+        <a style="color: #D5D4D4;">강원도 원주시 행구동 행구로 314</a>
+        <p>춘천에서 유명한 베이커리 카페! 강릉에 테라로사가 있다면 춘천에는 라뜰리에김가가 있다!</p>
+        <p><hr>주소 : 강원도 원주시 행구동 행구로 314<br>
+                전화번호 : 033-735-5677<br>
+                종류 : 베이커리, 카페<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 10:00 ~ 22:00</p>
+        <a class="btn btn-primary" href="/tag1_1">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Two -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/tag1_2">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/taglist/one/02.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>2. 언올드첨<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.3</span></h3>
+        <a style="color: #D5D4D4;">경기도 수원시 팔달구 고화로39번길 76</a>
+        <p>수원역에서 많이 멀지않은 조용하고 차분한 분위기의 카페, 커피도 맛있지만 디저트 맛집!</p>
+        <p><hr>주소 : 경기도 수원시 팔달구 고화로39번길 76<br>
+                전화번호 : 010-4899-0009<br>
+                종류 : 카페, 디저트<br>
+                주차 : 주차공간없음<br>
+                영업시간 : 10:00 ~ 22:00</p>
+        <a class="btn btn-primary" href="/tag1_2">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Three -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/tag1_3">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/taglist/one/03.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>3. 카페인  신현리<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.0</span></h3>
+        <a style="color: #D5D4D4;">경기도 광주시 오포읍 새말길167번길 68</a>
+        <p>카페 뒤편의 경치가 정말 아름다운 곳, 드립커피 전문점</p>
+        <p><hr>주소 : 경기도 광주시 오포읍 새말길167번길 68<br>
+                전화번호 : 070-5073-2424<br>
+                종류 : 카페, 디저트<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 월~금 11:00 ~ 21:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;토~일 11:00 ~ 22:00<br></p>
+        <a class="btn btn-primary" href="/tag1_3">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Four -->
+    <div class="row">
+
+      <div class="col-md-7">
+        <a href="/tag1_4">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/taglist/one/04.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>4. 12안젤로<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.5</span></h3>
+        <a style="color: #D5D4D4;">강원도 원주시 단계동 1115-3</a>
+        <p>예쁜 인테리어에 조용한 분위기, 티타임을 즐기기 좋은 곳, 아인슈페너를 꼭 드셔보세요!</p>
+        <p><hr>주소 : 강원도 원주시 단계동 1115-3<br>
+                전화번호 : 033-748-8253<br>
+                종류 : 카페, 식사<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 11:00 ~ 24:00<br></p>
+        <a class="btn btn-primary" href="/tag1_4">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Five -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/tag1_5">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/taglist/one/05.jpg" %}" width="800" height="400" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>5. 미스티크<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.1</span></h3>
+        <a style="color: #D5D4D4;">경상남도 통영시 산양읍 연화리 194</a>
+        <p>분위기 좋은 해변에 위치한 라운지 카페</p>
+        <p><hr>주소 : 경상남도 통영시 산양읍 연화리 194<br>
+                전화번호 : 055-646-9046<br>
+                종류 : 카페, 디저트<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 10:30 ~ 20:00<br></p>
+        <a class="btn btn-primary" href="/tag1_5">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Six -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/tag1_6">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/taglist/one/06.jpg" %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>6. 테일러커피 연남1호점<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.2</span></h3>
+        <a style="color: #D5D4D4;">서울특별시 마포구 연남동 224-41</a>
+        <p>여러 체인점을 보유한 인기 카페 테일러 커피</p>
+        <p><hr>주소 : 서울특별시 마포구 연남동 224-41<br>
+                전화번호 : 02-326-0355<br>
+                종류 : 카페, 식사, 디저트<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 10:00 ~ 23:00</p>
+        <a class="btn btn-primary" href="/tag1_6">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/recommendation1">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/recommendation1_2">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src='{% static "blog/vendor/jquery/jquery.min.js" %}'></script>
+  <script src='{% static "blog/vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
+
+</body>
+
+</html>

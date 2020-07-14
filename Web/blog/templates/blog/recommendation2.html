@@ -12,14 +12,12 @@
   <title>Modern Business - Start Bootstrap Template</title>
 
   <!-- Bootstrap core CSS -->
-  <link href='{% static "blog/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+  <link href='{% static "blog/vendor/bootstrap/css/bootstrap.min.css"%}' rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href='{% static "blog/css/modern-business.css" %}' rel="stylesheet">
 
 </head>
-
-<body>
 
   <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -34,10 +32,10 @@
             <a class="nav-link" href="/introduce">Introduce</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/services">Tag</a>
+            <a class="nav-link" href="/tag">Tag</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">FAQ</a>
+            <a class="nav-link" href="/contact">Contact</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,9 +43,9 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
               <a class="dropdown-item" href="/recommendation1">인기 순위</a>
-              <a class="dropdown-item" href="/recommendation2">유저 추천</a>
+              <a class="dropdown-item" href="/recommendation2">지역별 추천</a>
               <a class="dropdown-item" href="/recommendation3">에디터 추천</a>
-              <a class="dropdown-item" href="/recommendation4">회원 맞춤형</a>
+              <a class="dropdown-item" href="/recommendation4">맞춤형 추천</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -55,10 +53,12 @@
               User
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-              <a class="dropdown-item" href="/full-width">Sign in</a>
-              <a class="dropdown-item" href="/sidebar">Sign up</a>
-              <a class="dropdown-item" href="/faq">Privacy</a>
-              <a class="dropdown-item" href="/404">Calendar</a>
+              {% if request.session.user %}
+                <a class="dropdown-item" href="/users/logout">Logout</a>
+              {% else %}
+                <a class="dropdown-item" href="/users/login">Login</a>
+                <a class="dropdown-item" href="/users/register/">Sign up</a>
+              {% endif %}
             </div>
           </li>
         </ul>
@@ -70,194 +70,105 @@
   <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">유저
-      <small>추천장소</small>
+    <h1 class="mt-4 mb-3">지역별  
+      <small>장소 선정</small>
     </h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <a href="{% url 'index' %}">Home</a>
       </li>
-      <li class="breadcrumb-item active">유저 추천</li>
+      <li class="breadcrumb-item active">Area</li>
     </ol>
 
-    <!-- Project One -->
+    <!-- Image Header -->
     <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/14.jpg" %}" alt="">
-        </a>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="/area_list1"><img class="card-img-top" src="{% static "blog/img/arealist/01.PNG" %}" height="200" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/area_list1">서울</a>
+            </h4>
+            <p class="card-text">대한민국의 대표 수도 서울 탐방<br>"가장 서울 다움을 잘 표현한 명소 탐구"</p>
+          </div>
+          <div class="card-footer">
+            <a href="/area_list1" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
       </div>
-      <div class="col-md-5">
-        <h3>1. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="/area_list2"><img class="card-img-top" src="{% static "blog/img/arealist/02.PNG" %}" height="200" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/area_list2">인천</a>
+            </h4>
+            <p class="card-text">차이나 타운 부터 일본 조계지까지<br>"인천 속에서 세계를 바라본다"</p>
+          </div>
+          <div class="card-footer">
+            <a href="/area_list2" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="/area_list3"><img class="card-img-top" src="{% static "blog/img/arealist/03.PNG" %}" height="200" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/area_list3">부산</a>
+            </h4>
+            <p class="card-text">여름의 대표 여행지 부산<br>"당일치기 코스로 부산 식도락 여행"</p>
+          </div>
+          <div class="card-footer">
+            <a href="/area_list3" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="/area_list4"><img class="card-img-top" src="{% static "blog/img/arealist/04.PNG" %}" height="200" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/area_list4">광주</a>
+            </h4>
+            <p class="card-text">문화 탐방부터 테마거리 즐기기 까지<br>"내가 모르는 광주 알아보기"</p>
+          </div>
+          <div class="card-footer">
+            <a href="/area_list4" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="/area_list5"><img class="card-img-top" src="{% static "blog/img/arealist/05.PNG" %}" height="200" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/area_list5">대전</a>
+            </h4>
+            <p class="card-text">성심당 튀김소보루 뿐만이 아니다<br>"현지인들만이 알고 있는 대구 숨은 명소"</p>
+          </div>
+          <div class="card-footer">
+            <a href="/area_list5" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="/area_list6"><img class="card-img-top" src="{% static "blog/img/arealist/06.PNG" %}" height="200" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/area_list6">강원도</a>
+            </h4>
+            <p class="card-text">산 과 바다 그리고 명소탐방<br>"정석적인 강원도 여행 코스 체험"</p>
+          </div>
+          <div class="card-footer">
+            <a href="/area_list6" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
       </div>
     </div>
     <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Two -->
-    <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/15.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>2. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Three -->
-    <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/16.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>3. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Four -->
-    <div class="row">
-
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/17.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>4. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Five -->
-    <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/18.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>5. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Six -->
-    <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/19.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>6. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Seven -->
-    <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/20.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>7. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Eight -->
-    <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/21.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>8. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">Learn More
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Pagination -->
-    <ul class="pagination justify-content-center">
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-          <span class="sr-only">Previous</span>
-        </a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">1</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">2</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">3</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-          <span class="sr-only">Next</span>
-        </a>
-      </li>
-    </ul>
 
   </div>
   <!-- /.container -->
@@ -273,6 +184,7 @@
   <!-- Bootstrap core JavaScript -->
   <script src='{% static "blog/vendor/jquery/jquery.min.js" %}'></script>
   <script src='{% static "blog/vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
+  <script src='{% static "blog/vendor/bootstrap/js/bootstrap.min.js" %}'></script>
 
 </body>
 

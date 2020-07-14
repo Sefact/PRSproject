@@ -21,7 +21,6 @@
 
 <body>
 
-  <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'index' %}">Chicken POP</a>
@@ -34,10 +33,10 @@
             <a class="nav-link" href="/introduce">Introduce</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/services">Tag</a>
+            <a class="nav-link" href="/tag">Tag</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">FAQ</a>
+            <a class="nav-link" href="/contact">Contact</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,9 +44,9 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
               <a class="dropdown-item" href="/recommendation1">인기 순위</a>
-              <a class="dropdown-item" href="/recommendation2">유저 추천</a>
+              <a class="dropdown-item" href="/recommendation2">지역별 추천</a>
               <a class="dropdown-item" href="/recommendation3">에디터 추천</a>
-              <a class="dropdown-item" href="/recommendation4">회원 맞춤형</a>
+              <a class="dropdown-item" href="/recommendation4">맞춤형 추천</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -55,10 +54,12 @@
               User
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-              <a class="dropdown-item" href="/full-width">Sign in</a>
-              <a class="dropdown-item" href="/sidebar">Sign up</a>
-              <a class="dropdown-item" href="/faq">Privacy</a>
-              <a class="dropdown-item" href="/404">Calendar</a>
+              {% if request.session.user %}
+                <a class="dropdown-item" href="/users/logout">Logout</a>
+              {% else %}
+                <a class="dropdown-item" href="/users/login">Login</a>
+                <a class="dropdown-item" href="/users/register/">Sign up</a>
+              {% endif %}
             </div>
           </li>
         </ul>
@@ -70,28 +71,30 @@
   <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">에디터
-      <small>추천</small>
-    </h1>
+    <h1 class="mt-4 mb-3">에디터 추천</h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <a href="{% url 'index' %}">Home</a>
       </li>
-      <li class="breadcrumb-item active">에디터 추천</li>
+      <li class="breadcrumb-item active">에디터</li>
     </ol>
 
     <!-- Project One -->
     <div class="row">
       <div class="col-md-7">
         <a href="/recommend3_1">
-          <img src="{% static "blog/img/태그/라뜰리에메인.PNG" %}" width="630" height="300" alt=""/>
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/recommend/three/01.jpg" %}" alt="">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>1. 빵공장 라뜰리에 김가<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;3.9</span></h3>
-        <a style="color: #D5D4D4;">강원도 원주시 행구동 행구로 314</a>
-        <p>강원도 원주에 위치한 라뜰리에 김가는 비교적 사람이 없는 한적한 공간에 위치해 있으며 아름답게 꾸며진 정원가 카페가 어우러져 사진이 잘찍히는 명소로 유명하다.</p>
+        <h3>1. 잠실야구장<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.4</span></h3>
+        <a style="color: #D5D4D4;">서울특별시 송파구 잠실동 올림픽로 25</a>
+        <p>서울에 있는 대형 야구장. TV에서 보던 야구장의 열기를 느낄 수 있는 곳. 키스타임, 뜨거운 응원, 야구관람, 먹거리들 다양한 매력으로 야구의 세계로 빠져들게한다.</p>
+        <p><hr>주소 : 서울특별시 송파구 잠실동 올림픽로 25<br>
+                전화번호 : 02-2202-3834<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 09:00 ~ 21:00</p>
         <a class="btn btn-primary" href="/recommend3_1">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
@@ -105,13 +108,17 @@
     <div class="row">
       <div class="col-md-7">
         <a href="/recommend3_2">
-          <img src="{% static "blog/img/태그/언올드첨메인.PNG" %}" alt="" width="630" height="300"/>
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/recommend/three/02.jpg" %}" alt="">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>2. 언올드첨<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.2</span></h3>
-        <a style="color: #D5D4D4;">경기도 수원시 팔달구 고화로 39번길 76</a>
-        <p>Unkown.</p>
+        <h3>2. 롯데콘서트홀<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.5</span></h3>
+        <a style="color: #D5D4D4;">서울시 송파구 올림픽로 300 롯데월드몰 8층 롯데콘서트홀</a>
+        <p>음악을 통해 일상 속 작은 행복을 느낄 수 있는 편안한 공간이 될 것이며, 대한민국 공연 문화의 중심으로 국내 클래식 시장의 새로운 장을 열었다</p>
+        <p><hr>주소 : 서울시 송파구 올림픽로 300 롯데월드몰 8층 롯데콘서트홀<br>
+                전화번호 : 1544-7744<br>
+                주차 : 주차장(10분당 500원)<br>
+                영업시간 : 10:30 ~ 19:00</p>
         <a class="btn btn-primary" href="/recommend3_2">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
@@ -125,13 +132,18 @@
     <div class="row">
       <div class="col-md-7">
         <a href="/recommend3_3">
-          <img src="{% static "blog/img/태그/카페인신현리메인.PNG" %}" alt="" width="630" height="300">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/recommend/three/03.jpg" %}" alt="">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>3. 카페인 신현리<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.0</span></h3>
-        <a style="color: #D5D4D4;">경기도 광주시 오포읍 새말길167번길 68</a>
-        <p>Unknown</p>
+        <h3>3. 오이도<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;3.7</span></h3>
+        <a style="color: #D5D4D4;">경기도 시흥시 정왕동 2003-16</a>
+        <p>바닷가와 접해있어서 각종 수산물 어시장과 횟집 등의 식당들이 많이 들어서 있는 곳으로, 회를 좋아한다면 추천할만한 장소이다.</p>
+        <p><hr>주소 : 경기도 시흥시 정왕동 2003-16<br>
+                전화번호 : 031-319-0205<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 00:00 ~ 24:00<br>
+                입장료 : 무료</p>
         <a class="btn btn-primary" href="/recommend3_3">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
@@ -143,15 +155,21 @@
 
     <!-- Project Four -->
     <div class="row">
+
       <div class="col-md-7">
         <a href="/recommend3_4">
-          <img src="{% static "blog/img/태그/12안젤라메인.PNG" %}" alt="" width="630" height="300"/>
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/recommend/three/04.jpg" %}" alt="">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>4. 12안젤로<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.3</span></h3>
-        <a style="color: #D5D4D4;">강원도 원주시 단계동 1115-3</a>
-        <p>Unknown</p>
+        <h3>4. 라세느 롯데호텔서울<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.4</span></h3>
+        <a style="color: #D5D4D4;">서울특별시 중구 남대문로 81 롯데호텔서울 본관 1F</a>
+        <p>계절별 음식재료를 사용한 신선한 요리와 매월 ‘이벤트 메뉴’로 제공되는 세계 여러 나라의 다채로운 음식을 경험할 수 있습니다</p>
+        <p><hr>주소 : 서울특별시 중구 남대문로 81 롯데호텔서울 본관 1F
+                전화번호 : 02-317-7171<br>
+                종류 : 뷔페<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 06:00 ~ 22:00</p>
         <a class="btn btn-primary" href="/recommend3_4">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
@@ -165,13 +183,18 @@
     <div class="row">
       <div class="col-md-7">
         <a href="/recommend3_5">
-          <img src="{% static "blog/img/태그/미스티크메인.PNG" %}" alt="" width="630" height="300">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/recommend/three/05.jpg" %}" width="800" height="400" alt="">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>5. 미스티크<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.1</span></h3>
-        <a style="color: #D5D4D4;">경상남도 통영시 산양읍 연화리 194</a>
-        <p>Unknown</p>
+        <h3>5. 롯데월드 아쿠아리움<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.2</span></h3>
+        <a style="color: #D5D4D4;">서울특별시 송파구 잠실6동</a>
+        <p>사람과 자연이 더불어 사는 즐거운 세상을 꿈꾸는 롯데월드 아쿠아리움. 깊고 드넓은 해양 생태계 그대로를 재현한 공간</p>
+        <p><hr>주소 : 서울특별시 송파구 잠실6동
+                전화번호 : 02-3213-5000<br>
+                주차 : 주차장(10분당 1000원)<br>
+                영업시간 : 11:00 ~ 21:00<br>
+                입장료 : 성인 31000원, 어린이 27000원</p>
         <a class="btn btn-primary" href="/recommend3_5">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
@@ -185,13 +208,18 @@
     <div class="row">
       <div class="col-md-7">
         <a href="/recommend3_6">
-          <img src="{% static "blog/img/태그/테일러커피메인.PNG" %}" alt="" width="630" height="300">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/recommend/three/06.jpg" %}" alt="">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>6. 테일러커피 연남1호점<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.2</span></h3>
-        <a style="color: #D5D4D4;">서울특별시 마포구 연남동 224-41</a>
-        <p>Unknown</p>
+        <h3>6. 스시카나에<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.6</span></h3>
+        <a style="color: #D5D4D4;">서울특별시 강남구 도산대로75길 15 노노빌딩 2F</a>
+        <p>특별한 날, 특별한 손님과 함께 먹고싶은 스시가 있는 곳</p>
+        <p><hr>주소 : 서울특별시 강남구 도산대로75길 15 노노빌딩 2F<br>
+                전화번호 : 02-516-3350<br>
+                종류 : 회/스시<br>
+                주차 : 주차장(발렛파킹)<br>
+                영업시간 : 12:00 - 22:00</p>
         <a class="btn btn-primary" href="/recommend3_6">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
@@ -200,45 +228,6 @@
     <!-- /.row -->
 
     <hr>
-
-    <!-- Project Seven -->
-    <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/20.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>7. 장소</h3>
-        <p>Unknown</p>
-        <a class="btn btn-primary" href="#">더 보기
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Eight -->
-    <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/21.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>8. 장소</h3>
-        <p>Unknown</p>
-        <a class="btn btn-primary" href="#">더 보기
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
     <!-- Pagination -->
     <ul class="pagination justify-content-center">
       <li class="page-item">
@@ -251,7 +240,7 @@
         <a class="page-link" href="/recommendation3">1</a>
       </li>
       <li class="page-item">
-        <a class="page-link" href="/recommendation1_2">2</a>
+        <a class="page-link" href="#">2</a>
       </li>
       <li class="page-item">
         <a class="page-link" href="#">3</a>

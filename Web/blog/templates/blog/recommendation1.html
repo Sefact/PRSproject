@@ -34,10 +34,10 @@
             <a class="nav-link" href="/introduce">Introduce</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/services">Tag</a>
+            <a class="nav-link" href="/tag">Tag</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">FAQ</a>
+            <a class="nav-link" href="/contact">Contact</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,9 +45,9 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
               <a class="dropdown-item" href="/recommendation1">인기 순위</a>
-              <a class="dropdown-item" href="/recommendation2">유저 추천</a>
+              <a class="dropdown-item" href="/recommendation2">지역별 추천</a>
               <a class="dropdown-item" href="/recommendation3">에디터 추천</a>
-              <a class="dropdown-item" href="/recommendation4">회원 맞춤형</a>
+              <a class="dropdown-item" href="/recommendation4">맞춤형 추천</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -55,10 +55,12 @@
               User
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-              <a class="dropdown-item" href="/full-width">Sign in</a>
-              <a class="dropdown-item" href="/sidebar">Sign up</a>
-              <a class="dropdown-item" href="/faq">Privacy</a>
-              <a class="dropdown-item" href="/404">Calendar</a>
+              {% if request.session.user %}
+                <a class="dropdown-item" href="/users/logout">Logout</a>
+              {% else %}
+                <a class="dropdown-item" href="/users/login">Login</a>
+                <a class="dropdown-item" href="/users/register/">Sign up</a>
+              {% endif %}
             </div>
           </li>
         </ul>
@@ -70,28 +72,31 @@
   <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">인기 순위
-      <small>추천장소</small>
-    </h1>
+    <h1 class="mt-4 mb-3">인기 순위</h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <a href="{% url 'index' %}">Home</a>
       </li>
-      <li class="breadcrumb-item active">인기 순위</li>
+      <li class="breadcrumb-item active">인기</li>
     </ol>
 
     <!-- Project One -->
     <div class="row">
       <div class="col-md-7">
         <a href="/recommend1_1">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/14.jpeg" %}" alt="">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/recommend/one/01.jpg" %}" alt="">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>1. 빵공장 라뜰리에 김가<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;3.9</span></h3>
-        <a style="color: #D5D4D4;">강원도 원주시 행구동 행구로 314</a>
-        <p>강원도 원주에 위치한 라뜰리에 김가는 비교적 사람이 없는 한적한 공간에 위치해 있으며 아름답게 꾸며진 정원가 카페가 어우러져 사진이 잘찍히는 명소로 유명하다.</p>
+        <h3>1. N 서울타워<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.4</span></h3>
+        <a style="color: #D5D4D4;">서울 용산구 남산공원길 126</a>
+        <p>N 서울타워로 가는 방법은 다양해요. 남산 도서관길을 지나 두 발로 걸어서 올라갈 수도 있고 마을버스나 케이블카를 타고 이동할 수도 있어요. 올라갈 때와 내려갈 때의 방법을 다르게 선택하면 남산의 여러 모습을 한 번에 즐길 수 있어요. 특히 밤에 이곳에서 바라보는 서울의 야경은 로맨틱한 분위기를 선사해 연인들에게도 인기</p>
+        <p><hr>주소 : 서울 용산구 남산공원길 126<br>
+                전화번호 : 02-3455-9277<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 10:00 ~ 23:00<br>
+                입장료 : 무료	</p>
         <a class="btn btn-primary" href="/recommend1_1">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
@@ -105,13 +110,18 @@
     <div class="row">
       <div class="col-md-7">
         <a href="/recommend1_2">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/15.jpg" %}" alt="">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/recommend/one/02.jpg" %}" alt="">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>2. 언올드첨<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.2</span></h3>
-        <a style="color: #D5D4D4;">경기도 수원시 팔달구 고화로 39번길 76</a>
-        <p>Unkown.</p>
+        <h3>2. 차이나타운<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;3.8</span></h3>
+        <a style="color: #D5D4D4;">인천광역시 중구 차이나타운로59번길 12</a>
+        <p>한국에서 중국의 문화를 겪어 볼 수 있는 곳, 인천 속 작은 중국, 낮에도 좋지만 밤이면 야경이 예쁘다.</p>
+        <p><hr>주소 : 인천광역시 중구 차이나타운로59번길 12<br>
+                전화번호 : 032-777-1330<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 00:00 ~ 24:00<br>
+                입장료 : 성인 1000원, 청소년 700원, 어린이 500원</p>
         <a class="btn btn-primary" href="/recommend1_2">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
@@ -125,13 +135,18 @@
     <div class="row">
       <div class="col-md-7">
         <a href="/recommend1_3">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/16.jpg" %}" alt="">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/recommend/one/03.jpg" %}" alt="">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>3. 카페인 신현리<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.0</span></h3>
-        <a style="color: #D5D4D4;">경기도 광주시 오포읍 새말길167번길 68</a>
-        <p>Unkown</p>
+        <h3>3. 오륙도 스카이워크<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.2</span></h3>
+        <a style="color: #D5D4D4;">부산 남구 오륙도로 137</a>
+        <p>긴 해안선을 만끽할 수 있도록 조성된 이기대 수변공원에는 해안을 따라 걷기 좋게 개발된 산책로 코스가 여럿 있어요. 산책로를 따라 해안가를 걷다 보면 바다를 향해 뻗어 있는 오륙도 스카이워크가 나타나요. 바닥과 난간이 전부 유리로 되어 있어 길이는 짧지만 아찔한 체험을 하게 될 거예요. 코스마다 다양한 풍경을 감상할 수 있고 꽤 면적이 넓으니 편안한 신발을 신고 도전해 보세요.</p>
+        <p><hr>주소 : 부산 남구 오륙도로 137<br>
+                전화번호 : 051-607-6395<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 09:00 ~ 19:00<br>
+                입장료 : 무료</p>
         <a class="btn btn-primary" href="/recommend1_3">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
@@ -145,14 +160,20 @@
     <div class="row">
 
       <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/17.jpg" %}" alt="">
+        <a href="/recommend1_4">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/recommend/one/04.jpg" %}" alt="">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>4. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
-        <a class="btn btn-primary" href="#">더 보기
+        <h3>4. 대전엑스포 시민광장<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;5.0</span></h3>
+        <a style="color: #D5D4D4;">대전광역시 서구 만년동 둔산대로 169</a>
+        <p>나들이하기 좋은 광장. 잔디 위에서 집에서 싸온 도시락을 먹으며 연인과 함께 자전거를 타며 알찬 하루를 보내세요</p>
+        <p><hr>주소 : 대전광역시 서구 만년동 둔산대로 169<br>
+                전화번호 : 042-250-1400<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 00:00 ~ 24:00<br>
+                입장료 : 무료</p>
+        <a class="btn btn-primary" href="/recommend1_4">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -164,14 +185,20 @@
     <!-- Project Five -->
     <div class="row">
       <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/18.jpg" %}" alt="">
+        <a href="/recommend1_5">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/recommend/one/05.jpg" %}" width="800" height="400" alt="">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>5. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">더 보기
+        <h3>5. 남이섬<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.4</span></h3>
+        <a style="color: #D5D4D4;">강원도 춘천시 남산면 남이섬길 1</a>
+        <p>자연에서 힐링하는 느낌. 배를 타고 10~15분정도 들어가면 나오는 작은자연섬. 길을 걸으며 동물이랑도 함께하는 느낌이 든다. 자전거를 타면서 섬을 돌아보고 중간중간 드라마 촬영지에서 사진을 찍는 것은 어떤가</p>
+        <p><hr>주소 : 강원도 춘천시 남산면 남이섬길 1<br>
+                전화번호 : 031-580-8114<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 07:30 ~ 21:45<br>
+                입장료 : 13000원</p>
+        <a class="btn btn-primary" href="/recommend1_5">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -183,14 +210,20 @@
     <!-- Project Six -->
     <div class="row">
       <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/19.jpg" %}" alt="">
+        <a href="/recommend1_6">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/recommend/one/06.jpg" %}" alt="">
         </a>
       </div>
       <div class="col-md-5">
-        <h3>6. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">더 보기
+        <h3>6. 헤이리마을<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;3.9</span></h3>
+        <a style="color: #D5D4D4;">경기도 파주시 탄현면 법흥리 1652-239</a>
+        <p>국내 최대 규모의 예술마을로 많은 예술인들의 작업장 및 전시장, 공연장, 갤러리, 박물관들이 들어서 있는 곳이다. 이곳에 지어진 건물들은 국내의 유명 건축가들이 설계한 것으로 예쁜 건물들이 즐비하다.</p>
+        <p><hr>주소 : 경기도 파주시 탄현면 법흥리 1652-239
+                전화번호 : 031-946-8551<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 00:00 ~ 24:00<br>
+                입장료 : 무료</p>
+        <a class="btn btn-primary" href="/recommend1_6">더 보기
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
       </div>
@@ -198,45 +231,6 @@
     <!-- /.row -->
 
     <hr>
-
-    <!-- Project Seven -->
-    <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/20.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>7. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">더 보기
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Eight -->
-    <div class="row">
-      <div class="col-md-7">
-        <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="{% static "blog/img/21.jpg" %}" alt="">
-        </a>
-      </div>
-      <div class="col-md-5">
-        <h3>8. 장소</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-primary" href="#">더 보기
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
     <!-- Pagination -->
     <ul class="pagination justify-content-center">
       <li class="page-item">
@@ -249,7 +243,7 @@
         <a class="page-link" href="/recommendation1">1</a>
       </li>
       <li class="page-item">
-        <a class="page-link" href="/recommendation1_2">2</a>
+        <a class="page-link" href="#">2</a>
       </li>
       <li class="page-item">
         <a class="page-link" href="#">3</a>

@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Modern Business - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href='{% static "blog/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href='{% static "blog/css/modern-business.css" %}' rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">Chicken POP</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/introduce">Introduce</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tag">Tag</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Recomendation
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="/recommendation1">인기 순위</a>
+              <a class="dropdown-item" href="/recommendation2">지역별 추천</a>
+              <a class="dropdown-item" href="/recommendation3">에디터 추천</a>
+              <a class="dropdown-item" href="/recommendation4">맞춤형 추천</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              User
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              {% if request.session.user %}
+                <a class="dropdown-item" href="/users/logout">Logout</a>
+              {% else %}
+                <a class="dropdown-item" href="/users/login">Login</a>
+                <a class="dropdown-item" href="/users/register/">Sign up</a>
+              {% endif %}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container-fluid">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <a><br></a>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'index' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="/recommendation1">인기</a>
+      </li>
+      <li class="breadcrumb-item active">남이섬</li>
+    </ol>
+
+    <div class="row">
+
+      <!-- Blog Entries Column -->
+      <div class="col-6">
+
+        <!-- Blog Post -->
+        <div class="card mb-4">
+          <img class="card-img-top" src="{% static "blog/img/recommend/one/05.jpg" %}" alt="Card image cap" width="1200" height="600">
+          <div class="card-body">
+            <h1>남이섬<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.4</span></h1>
+            <p style="color: #AEAEAE;">&nbsp;강원도명소</p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">주소</td>
+                  <td scope="col">강원도 춘천시 남산면 남이섬길 1</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">전화번호</td>
+                  <td scope="col">031-580-8114</td>
+                </tr>
+              </thead>  
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">주차</td>
+                  <td scope="col">주차장(무료주차)</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">영업시간</td>
+                  <td scope="col">07:30 ~ 21:45</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <td style="color: #D5D4D4;" scope="col">입장료</td>
+                  <td scope="col">13000원</td>
+                </tr>
+              </thead>
+             </table>
+            <p class="card-text"></p>
+          </div>
+          <div class="card-footer text-muted">
+            Posted on June 24, 2020 by
+            <a href="#">Chicken POP</a>
+          </div>
+        </div>
+        
+        
+
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="/recommend1_4">&larr; Older</a>
+          </li>
+          <li class="pagination justify-content-center mb-4">
+            <a class="page-link" href="/recommend1_6">Newer &rarr;</a>
+          </li>
+        </ul>
+
+      </div>
+
+      
+      <div class="col-4">
+        <!-- Embedded Google Map -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12611.775719001951!2d127.51680849253724!3d37.79135377768678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356326e41560af75%3A0xd64aaaa329e7c522!2z64Ko7J207ISs!5e0!3m2!1sko!2sjp!4v1593532570530!5m2!1sko!2sjp" width="600" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <a><br></a>
+        <div>
+          <table style=border-spacing: 10px;>
+          <tr>
+            <td scope="col"><img src="{% static "blog/img/recommend/one/05_1.PNG" %}" width="300" height="250"></td>
+            <td scope="col"><img src="{% static "blog/img/recommend/one/05_2.PNG" %}" width="300" height="250"></td>
+          </tr>
+          <tr>
+            <td scope="col"><img src="{% static "blog/img/recommend/one/05_3.PNG" %}" width="300" height="250"></td>
+            <td scope="col"><img src="{% static "blog/img/recommend/one/05_4.PNG" %}" width="300" height="250"></td>
+          </tr>
+        </table>
+        </div>
+      </div>        
+      
+  </div>
+
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src='{% static "blog/vendor/jquery/jquery.min.js" %}'></script>
+  <script src='{% static "blog/vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
+
+</body>
+
+</html>

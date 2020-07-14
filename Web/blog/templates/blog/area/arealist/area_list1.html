@@ -1,0 +1,279 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Modern Business - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href='{% static "blog/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href='{% static "blog/css/modern-business.css" %}' rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">Chicken POP</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/introduce">Introduce</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tag">Tag</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Recomendation
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="/recommendation1">인기 순위</a>
+              <a class="dropdown-item" href="/recommendation2">지역별 추천</a>
+              <a class="dropdown-item" href="/recommendation3">에디터 추천</a>
+              <a class="dropdown-item" href="/recommendation4">맞춤형 추천</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              User
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              {% if request.session.user %}
+                <a class="dropdown-item" href="/users/logout">Logout</a>
+              {% else %}
+                <a class="dropdown-item" href="/users/login">Login</a>
+                <a class="dropdown-item" href="/users/register/">Sign up</a>
+              {% endif %}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">서울</h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'index' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="/recommendation2">Area</a>
+      </li>
+      <li class="breadcrumb-item active">서울</li>
+    </ol>
+
+    <!-- Project One -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area1_1">
+          <img src="{% static "blog/img/arealist/one/01.jpg" %}" width="635" height="400" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>1. N 서울타워<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.4</span></h3>
+        <a style="color: #D5D4D4;">서울 용산구 남산공원길 126</a>
+        <p>서울타워로 가는 방법은 다양해요. 남산 도서관길을 지나 두 발로 걸어서 올라갈 수도 있고 마을버스나 케이블카를 타고 이동할 수도 있어요. 올라갈 때와 내려갈 때의 방법을 다르게 선택하면 남산의 여러 모습을 한 번에 즐길 수 있어요. 특히 밤에 이곳에서 바라보는 서울의 야경은 로맨틱한 분위기를 선사해 연인들에게도 인기</p>
+        <p><hr>주소 : 서울 용산구 남산공원길 126<br>
+                전화번호 : 02-3455-9277<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 10:00 ~ 23:00<br>
+                입장료 : 무료</p>
+        <a class="btn btn-primary" href="/area1_1">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Two -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area1_2">
+          <img src="{% static "blog/img/arealist/one/02.jpg" %}" width="635" height="300" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>2. 리움 미술관<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.5</span></h3>
+        <a style="color: #D5D4D4;">서울특별시 용산구 이태원로55길 60-16 04348 (한남동)</a>
+        <p>관객과 소통하는 미술관, 예술로 삶을 더욱 풍부하게 하기 위해서</p>
+        <p><hr>주소 : 서울특별시 용산구 이태원로55길 60-16 04348 (한남동)<br>
+                전화번호 : 02-2014-6901<br>
+                주차 : 주차공간없음<br>
+                영업시간 : 10:30 ~ 18:00<br>
+                입장료 : 10000원</p>
+        <a class="btn btn-primary" href="/area1_2">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Three -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area1_3">
+          <img src="{% static "blog/img/arealist/one/03.jpg" %}" width="635" height="370" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>3. 경의선 숲길<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.4</span></h3>
+        <a style="color: #D5D4D4;">서울특별시 마포구 동교동 147-89</a>
+        <p>기존 경의선 부지를 활용해 만든 경의선 숲길은 뉴욕의 센트럴파크를 벤치마킹하여 연트럴파크라는 별칭으로도 불린다. 현재 경의선 숲길은 인근 주민들의 휴식공간으로 활용되고 있지만 독특한 분위기와 주변의 멋진 카페 덕분에 데이트 코스로도 유명하다.</p>
+        <p><hr>주소 : 서울특별시 마포구 동교동 147-89<br>
+                전화번호 : 없음<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 00:00 ~ 24:00<br>
+                입장료 : 무료</p>
+        <a class="btn btn-primary" href="/area1_3">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Four -->
+    <div class="row">
+
+      <div class="col-md-7">
+        <a href="/area1_4">
+          <img src="{% static "blog/img/arealist/one/04.jpg" %}" width="635" height="420" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>4. 서울 식물원<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.2</span></h3>
+        <a style="color: #D5D4D4;">서울 강서구 마곡동로 161 서울식물원</a>
+        <p>미래적인 건물의 온실과 한강 물길, 뱃길과 연결된 주제 정원으로 이뤄진 서울 식물원은 스카이워크를 걸으며 온실을 내려다보며 관람을 마무리할 수 있는 게 특징이에요. 또한 온실 내부에는 사진 촬영하기 좋은 장소를 마련해 두어 관람객들이 편리하게 추억을 남길 수 있어요. 외부의 주제 정원은 면적이 넓어 사람들의 방해 없이 조용한 산책이 가능해 사람 많은 곳을 좋아하지 않는 사람도 만족할 거예요.</p>
+        <p><hr>주소 : 서울 강서구 마곡동로 161 서울식물원<br>
+                전화번호 : 02-2104-9716<br>
+                주차 : 주차장(5분당 100원)<br>
+                영업시간 : 09:00 ~ 18:00<br>
+                입장료 : 성인 5000원, 청소년 3000원, 어린이 2000원</p>
+        <a class="btn btn-primary" href="/area1_4">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Five -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area1_5">
+          <img src="{% static "blog/img/arealist/one/05.jpg" %}" width="635" height="420" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>5. 동대문 DDP<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;4.3</span></h3>
+        <a style="color: #D5D4D4;">서울특별시 중구 을지로 281</a>
+        <p>동대문 DDP는 동대문 디자인 플라자(Dongdaemun Design Plaza)의 약자이기도 하지만 꿈꾸고(Dream), 만들고(Design), 누리는(Play) 공간이 되길 바라는 뜻에서 지은 이름이라고도 해요. 그만큼 다양한 전시와 먹거리, 놀 거리가 가득해 지루할 틈이 없어요. 낮에는 물론 정기 야시장이 열리기도 해서 저녁 데이트 코스로도 훌륭해요.</p>
+        <p><hr>주소 : 서울특별시 중구 을지로 281<br>
+                전화번호 : 02-2153-0000<br>
+                주차 : 주차장(무료주차)<br>
+                영업시간 : 10:00 ~ 19:00<br>
+                입장료 : 무료</p>
+        <a class="btn btn-primary" href="/area1_5">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Six -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="/area1_6">
+          <img src="{% static "blog/img/arealist/one/06.jpg" %}" width="635" height="420" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>6. 용마랜드<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;3.8</span></h3>
+        <a style="color: #D5D4D4;">서울 중랑구 망우로70길 118</a>
+        <p>지금은 운영하지 않는 놀이동산으로 자칫 버려진 공간이 될 뻔했던 용마랜드는 그 독특한 분위기를 살려 분위기 있는 사진 촬영을 할 수 있는 명소가 되었어요. 녹슬고 멈춘 알록달록한 놀이기구의 빛바랜 색 덕분에 빈티지하고 멋진 커플 사진을 남길 수 있어요. 평소 사진 촬영을 좋아하는 커플이라면 웨딩 촬영이나 아이돌의 뮤직비디오 촬영지로도 유명한 용마랜드를 꼭 방문해 보세요.</p>
+        <p><hr>주소 : 서울 중랑구 망우로70길 118<br>
+                전화번호 : 02-436-5800<br>
+                주차 : 주차공간없음<br>
+                영업시간 : 09:00 ~ 18:30<br>
+                입장료 : 5000원</p>
+        <a class="btn btn-primary" href="/area1_6">더 보기
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/recommendation1">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/recommendation1_2">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src='{% static "blog/vendor/jquery/jquery.min.js" %}'></script>
+  <script src='{% static "blog/vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
+
+</body>
+
+</html>
