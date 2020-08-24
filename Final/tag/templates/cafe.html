@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">카페</h1>
+
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="{% url 'tag' %}">Tag</a>
+        </li>
+        <li class="breadcrumb-item active">Cafe</li>
+        </ol>
+
+        <div class="row">
+            {% for cafe in cafes.all %}
+            <div class="col-md-7">
+                <a href="{% url 'cdetail' cafe.id %}">
+                    <img class="rounded mb-3 mb-md-0" src="{{ cafe.image_one.url }}" width="600" height="300">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>{{ cafe.title }}<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;{{ cafe.rating }}</span></h3>
+                <a style="color: #D5D4D4;"></a>
+                <p>{{ cafe.summary }}</p>
+                <p><hr>주소 : {{ cafe.address }}<br>
+                        전화번호 : {{ cafe.call }}<br>
+                        주차 : {{ cafe.park }}<br>
+                        영업시간 : {{ cafe.hours }}<br>
+                        메뉴 : {{ cafe.price }}</p>
+                <a class="btn btn-primary" href="#">더 보기
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+                <p><br></p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

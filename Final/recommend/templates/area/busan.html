@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">부산</h1>
+
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="{% url 'area' %}">Area</a>
+        </li>
+        <li class="breadcrumb-item active">Busan</li>
+        </ol>
+
+        <div class="row">
+            {% for busan in busans.all %}
+            <div class="col-md-7">
+                <a href="{% url 'busan_detail' busan.id %}">
+                    <img class="ounded mb-3 mb-md-0" src="{{ busan.image_one.url }}" width="620" height="360">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>{{ busan.title }}<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;{{ busan.rating }}</span></h3>
+                <a style="color: #D5D4D4;">{{ busan.division }}</a>
+                <p>{{ busan.summary }}</p>
+                <p><hr>주소 : {{ busan.address }}<br>
+                        전화번호 : {{ busan.call }}<br>
+                        주차 : {{ busan.park }}<br>
+                        영업시간 : {{ busan.hours }}<br>
+                        입장료 : {{ busan.price }}</p>
+                <a class="btn btn-primary" href="#">더 보기
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+                <p><br><br></p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

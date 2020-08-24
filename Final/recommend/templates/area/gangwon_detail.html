@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <br>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'home' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'area' %}">Area</a>
+      </li>
+      <li class="breadcrumb-item active">{{ gangwon.title }}</li>
+    </ol>
+    <div class="row">
+        <div class="col-6">
+            <div class="card mb-4">
+                {% if gangwon.image_one %}
+                    <img class="card-img-top" src="{{ gangwon.image_one.url }}" alt="Card image cap" width="1200" height="600">
+                {% endif %}
+                <div class="card-body">
+                    <h1>{{ gangwon.title }}<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;{{ gangwon.rating }}</span></h1>
+                    <p style="color: #AEAEAE;">&nbsp;{{ gangwon.division }}</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td style="color: #D5D4D4;" scope="col">주소</td>
+                                <td scope="col">{{ gangwon.address }}</td>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <td style="color: #D5D4D4;" scope="col">전화번호</td>
+                                <td scope="col">{{ gangwon.call }}</td>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <td style="color: #D5D4D4;" scope="col">주차</td>
+                                <td scope="col">{{ gangwon.park }}</td>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <td style="color: #D5D4D4;" scope="col">영업시간</td>
+                                <td scope="col">{{ gangwon.hours }}</td>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <td style="color: #D5D4D4;" scope="col">가격</td>
+                                <td scope="col">{{ gangwon.price }}</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="card-footer text-muted">
+                    {{gangwon.pub_date}}
+                </div>
+            </div>
+
+            <div class="card my-4">
+                <h5 class="card-header">Leave a Comment:</h5>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>                
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+        <div>
+          <img src="{{ gangwon.maps.url }}" alt="Card image cap" width="700" height="600"/>
+        </div>
+        <br>
+        <div>
+          <table style=border-spacing: 10px;>
+          <tr>
+            <td scope="col"><img src="{{ gangwon.image_two.url }}" width="350" height="300"></td>
+            <td scope="col"><img src="{{ gangwon.image_three.url }}" width="350" height="300"></td>
+          </tr>
+          <tr>
+            <td scope="col"><img src="{{ gangwon.image_four.url }}" width="350" height="300"></td>
+          </tr>
+        </table>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock content %}

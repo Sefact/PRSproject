@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active" style="background-image: url('{% static "img/slide/01.jpg" %}')">
+          
+          <div class="carousel-caption d-none d-md-block">
+            <h3>전통 시장 탐방</h3>
+            <p>커플 이색 데이트 전통 시장 탐방.</p>
+          </div>
+        </div>
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('{% static "img/slide/02.jpg" %}')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>양식 인기 맛집</h3>
+            <p>고품격 레스토랑 부터 캐주얼까지 총정리.</p>
+          </div>
+        </div>
+        <!-- Slide Three - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('{% static "img/slide/03.jpg" %}')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>연말 행사 장소 정리</h3>
+            <p>파티나 모임 연회에 안성맞춤인 장소.</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+{% endblock header %}
+
+{% block content %}
+  <div class="container">
+    <br>
+    <h2>인기 데이트 장소</h2>
+    <div class="row">
+      {% for blike in blikes.all %}
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="{% url 'blog:blog_like_detail' blike.id %}"><img class="card-img-top" src="{{ blike.image_one.url }}" alt="" height="200"></a>
+          <h4 class="card-header">{{ blike.title }}</h4>
+          <div class="card-body">
+            <p class="card-text">{{ blike.context }}</p>
+          </div>
+          <div class="card-footer">
+            <a href="{% url 'blog:blog_like_detail' blike.id %}" class="btn btn-primary">더 보기</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="container">
+    <br>
+    <h2>에디터 추천 장소</h2>
+    <div class="row">
+      {% for beditor in beditors.all %}
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="{% url 'blog:beditordetail' beditor.id %}"><img class="card-img-top" src="{{ beditor.image_one.url }}" alt="" height="200"></a>
+          <h4 class="card-header">{{ beditor.title }}</h4>
+          <div class="card-body">
+            <p class="card-text">{{ beditor.context }}</p>
+          </div>
+          <div class="card-footer">
+            <a href="{% url 'blog:beditordetail' beditor.id %}" class="btn btn-primary">더 보기</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

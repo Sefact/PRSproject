@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for document in documents.all  %}
+    <div>
+        <a href="{% url 'document:document_detail' document.id %}">{{ document.title }}</a>
+        <h1>{{ document.text }}</h1>
+    </div>
+    {% endfor %}
+{% endblock content %}

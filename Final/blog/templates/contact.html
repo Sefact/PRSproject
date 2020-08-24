@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">Company
+        <small>Contact</small>
+        </h1>
+
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Contact</li>
+        </ol>
+
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-lg-8 mb-4">
+                <!-- Embedded Google Map -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d793.0236176250144!2d126.73316963942885!3d37.340272084943024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b71084954ce5f%3A0xb676df1bd97c059!2z7ZWc6rWt7IKw7JeF6riw7Iig64yA7ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1597640226286!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <!-- Contact Details Column -->
+            <div class="col-lg-4 mb-4">
+                <h3>상세 설명</h3>
+                <p>
+                Jeongwang-dong, Siheung-si, Gyeonggi-do, 
+                <br>15073, REP. OF KOREA
+                <br>
+                </p>
+                <p>
+                <abbr title="Phone">P</abbr>: (010)-4037-4448
+                </p>
+                <p>
+                <abbr title="Email">E</abbr>:
+                <a href="mailto:name@example.com">lime17442@gmail.com
+                </a>
+                </p>
+                <p>
+                <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
+                </p>
+            </div>
+            </div>
+        </div>
+{% endblock content %}

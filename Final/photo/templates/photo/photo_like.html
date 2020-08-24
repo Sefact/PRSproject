@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">좋아요</h1>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Like</li>
+    </ol>
+
+    <div class="row">
+      {% for object in object_list %}
+      <div class="col-md-7">
+                <a href="{% url 'photo:detail' object.id %}">
+                    <img class="img-fluid rounded mb-3 mb-md-0" src="{{ object.image_one.url }}">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>{{ object.title }}<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;{{ object.rating }}</span></h3>
+                <a style="color: #D5D4D4;">{{ object.division }}</a>
+                <p></p>
+                <p><hr>주소 : {{ object.address }}<br>
+                        전화번호 : {{ object.call }}<br>
+                        주차 : {{ object.park }}<br>
+                        영업시간 : {{ object.hours }}<br>
+                        입장료 : {{ object.price }}</p>
+                <a class="btn btn-primary" href="{% url 'photo:detail' object.id %}">더 보기
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+                <p><br><br></p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

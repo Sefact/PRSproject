@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">지역별  
+            <small>추천 장소</small>
+        </h1>
+
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+            <li class="breadcrumb-item active">Area</li>
+        </ol>
+        <div class="row">
+            <!-- tag_one -->
+            <div class="col-lg-4 col-sm-4 portfolio-item">
+                <div class="card h-100">
+                    <a href="{% url 'seoul' %}"><img class="card-img-top" src="{% static "img/recommend/Seoul.jpg" %}" height="200"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{% url 'seoul' %}">서울</a>
+                        </h4>
+                        <p class="card-text">솔직한 리뷰로 뜯어보는 카페 리스트 <br>"숨은 맛집 발굴! <오늘의 리뷰> 선정카페"</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'seoul' %}" class="btn btn-primary">더 보기</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tag_two -->
+            <div class="col-lg-4 col-sm-4 portfolio-item">
+                <div class="card h-100">
+                    <a href="{% url 'incheon' %}"><img class="card-img-top" src="{% static "img/recommend/Incheon.jpg" %}" height="200"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{% url 'incheon' %}">인천</a>
+                        </h4>
+                        <p class="card-text">현재 핫한 작가들의 미술 전시회 <br>"근대에서 현대미술, <취향저격 전시회>"</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'incheon' %}" class="btn btn-primary">더 보기</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tag_three -->
+            <div class="col-lg-4 col-sm-4 portfolio-item">
+                <div class="card h-100">
+                    <a href="{% url 'busan' %}"><img class="card-img-top" src="{% static "img/recommend/Busan.jpg" %}" height="200"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{% url 'busan' %}">부산</a>
+                        </h4>
+                        <p class="card-text">성공률 100프로의 추천 맛집 <br>"안가보면 손해 실패할 수가 없는 유명 맛집"</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'busan' %}" class="btn btn-primary">더 보기</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tag_four -->
+            <div class="col-lg-4 col-sm-4 portfolio-item">
+                <div class="card h-100">
+                    <a href="{% url 'gwanggu' %}"><img class="card-img-top" src="{% static "img/recommend/Gwang-gu.jpg" %}" height="200"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{% url 'gwanggu' %}">광주</a>
+                        </h4>
+                        <p class="card-text">해외 유명 연극의 내한 <br>"박수를 칠수 밖에 없게 하는 수준의 뮤지컬"</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'gwanggu' %}" class="btn btn-primary">더 보기</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tag_five -->
+            <div class="col-lg-4 col-sm-4 portfolio-item">
+                <div class="card h-100">
+                    <a href="{% url 'daejon' %}"><img class="card-img-top" src="{% static "img/recommend/Daejon.jpg" %}" height="200"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{% url 'daejon' %}">대전</a>
+                        </h4>
+                        <p class="card-text">손에 땀을 쥐게 하는 스릴 방탈출 카페<br>"TV 예능 <방탈출> 직접 체험"</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'daejon' %}" class="btn btn-primary">더 보기</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tag_six -->
+            <div class="col-lg-4 col-sm-4 portfolio-item">
+                <div class="card h-100">
+                    <a href="{% url 'gangwon' %}"><img class="card-img-top" src="{% static "img/recommend/Gangwon-do.jpg" %}" height="200"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{% url 'gangwon' %}">강원도 </a>
+                        </h4>
+                        <p class="card-text">국내부터 해외까지 여행 장소추천 <br>"나만 알고 싶은 <히든 장소> 탐구"</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'gangwon' %}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

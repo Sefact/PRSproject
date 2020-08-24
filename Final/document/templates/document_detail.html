@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{document.title}} 
+
+{{document.text}}
+
+<form action="{% url "document:document_detail" document.id %}" method="POST">
+{% csrf_token %}
+
+    {{comment_form.as_p}}
+    <input type="submit" value="Comment" class="btn btn-outline-primary">
+
+</form>
+
+<table class="table table-striped">
+    {% for comment in comments %}
+    <tr>
+        <td>{{ comment.text }}</td>
+        <td>{{ comment.author.username}}</td>
+        <td>{{ comment.created }}</td>
+        <td><a href="{ % url 'board:comment_delete' comment.id % }">삭제하기</a></td>
+        <td><a href="{ % url 'board:comment_update' comment.id % }">수정하기</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

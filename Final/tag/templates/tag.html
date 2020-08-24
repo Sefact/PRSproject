@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">태그별  
+            <small>장소 선정</small>
+        </h1>
+
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+            <li class="breadcrumb-item active">Tag</li>
+        </ol>
+        <div class="row">
+            <!-- tag_one -->
+            <div class="col-lg-4 col-sm-4 portfolio-item">
+                <div class="card h-100">
+                    <a href="{% url 'cafe' %}"><img class="card-img-top" src="{% static "img/tag/01.jpeg" %}"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{% url 'cafe' %}">카페</a>
+                        </h4>
+                        <p class="card-text">솔직한 리뷰로 뜯어보는 카페 리스트 <br>"숨은 맛집 발굴! <오늘의 리뷰> 선정카페"</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'cafe' %}" class="btn btn-primary">더 보기</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tag_two -->
+            <div class="col-lg-4 col-sm-4 portfolio-item">
+                <div class="card h-100">
+                    <a href="{% url 'art' %}"><img class="card-img-top" src="{% static "img/tag/02.jpeg" %}"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{% url 'art' %}">미술관</a>
+                        </h4>
+                        <p class="card-text">현재 핫한 작가들의 미술 전시회 <br>"근대에서 현대미술, <취향저격 전시회>"</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'art' %}" class="btn btn-primary">더 보기</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tag_three -->
+            <div class="col-lg-4 col-sm-4 portfolio-item">
+                <div class="card h-100">
+                    <a href="{% url 'food' %}"><img class="card-img-top" src="{% static "img/tag/03.jpeg" %}"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{% url 'food' %}">음식점</a>
+                        </h4>
+                        <p class="card-text">성공률 100프로의 추천 맛집 <br>"안가보면 손해 실패할 수가 없는 유명 맛집"</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'food' %}" class="btn btn-primary">더 보기</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tag_four -->
+            <div class="col-lg-4 col-sm-4 portfolio-item">
+                <div class="card h-100">
+                    <a href="{% url 'theater' %}"><img class="card-img-top" src="{% static "img/tag/04.jpeg" %}"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{% url 'theater' %}">연극</a>
+                        </h4>
+                        <p class="card-text">해외 유명 연극의 내한 <br>"박수를 칠수 밖에 없게 하는 수준의 뮤지컬"</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'theater' %}" class="btn btn-primary">더 보기</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tag_five -->
+            <div class="col-lg-4 col-sm-4 portfolio-item">
+                <div class="card h-100">
+                    <a href="{% url 'escape' %}"><img class="card-img-top" src="{% static "img/tag/05.jpeg" %}"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{% url 'escape' %}">방탈출</a>
+                        </h4>
+                        <p class="card-text">손에 땀을 쥐게 하는 스릴 방탈출 카페<br>"TV 예능 <방탈출> 직접 체험"</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'escape' %}" class="btn btn-primary">더 보기</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tag_six -->
+            <div class="col-lg-4 col-sm-4 portfolio-item">
+                <div class="card h-100">
+                    <a href="{% url 'travle' %}"><img class="card-img-top" src="{% static "img/tag/06.jpeg" %}"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{% url 'travle' %}">여행</a>
+                        </h4>
+                        <p class="card-text">국내부터 해외까지 여행 장소추천 <br>"나만 알고 싶은 <히든 장소> 탐구"</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'travle' %}" class="btn btn-primary">더 보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
