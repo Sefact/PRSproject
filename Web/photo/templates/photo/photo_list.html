@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">목록</h1>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="breadcrumb-item active">List</li>
+    </ol>
+    <div class="row">
+      {% for object in object_list %}
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="{% url 'photo:detail' object.id %}"><img class="card-img-top" src="{{ object.image_one.url }}" alt="" height="200"></a>
+          <h4 class="card-header">{{ object.title }}</h4>
+          <div class="card-body">
+            <p class="card-text">{{ object.text }}</p>
+            <a href="{% url 'photo:like' object.id %}" class="float-left btn-like {%if user in object.like.all %} active {%endif%}">좋아요!</a>
+                        {% if object.like.all.count %}
+                        <span class = "float-left">
+                            {{object.like.all.count}}
+                        </span>
+                        {% endif %}
+                        <a href="{% url 'photo:favorite' object.id %}" class="float-right btn-favorite {%if user in object.favorite.all %}active{%endif%}">저장하기!</a>
+          </div>
+          <div class="card-footer">
+            <a href="{% url 'photo:detail' object.id %}" class="btn btn-primary">더 보기</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

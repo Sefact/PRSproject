@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <br>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'home' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item active">{{ blike.title }}</li>
+    </ol>
+    <div class="row">
+        <div class="col-6">
+            <div class="card mb-4">
+                {% if blike.image_one %}
+                    <img class="card-img-top" src="{{ blike.image_one.url }}" alt="Card image cap" width="1200" height="600">
+                {% endif %}
+                <div class="card-body">
+                    <h1>{{ blike.title }}<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;{{ blike.rating }}</span></h1>
+                    <p style="color: #AEAEAE;">&nbsp;{{ blike.division }}</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td style="color: #D5D4D4;" scope="col">주소</td>
+                                <td scope="col">{{ blike.address }}</td>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <td style="color: #D5D4D4;" scope="col">전화번호</td>
+                                <td scope="col">{{ blike.call }}</td>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <td style="color: #D5D4D4;" scope="col">주차</td>
+                                <td scope="col">{{ blike.park }}</td>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <td style="color: #D5D4D4;" scope="col">영업시간</td>
+                                <td scope="col">{{ blike.hours }}</td>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <td style="color: #D5D4D4;" scope="col">가격</td>
+                                <td scope="col">{{ blike.price|linebreaksbr }}</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="card-footer text-muted">
+                    {{blike.pub_date}}
+                </div>
+            </div>
+
+            <div class="card my-4">
+                <h5 class="card-header">Leave a Comment:</h5>
+                <div class="card-body">
+                    <form action="{% url "blog:blog_like_detail" blike.id %}" method="POST">
+                        {% csrf_token %}
+                        {{comment_form.as_p}}
+                        <input type="submit" value="Comment" class="btn btn-outline-primary">
+                    </form>
+                </div>
+            </div>
+                {% for like_comment in like_comments %}
+                    <div class="media mb-4">
+                        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50">
+                        <div class="media-body">
+                            <h5 class="mt-o">{{ like_comment.author.username}}</h5>
+                            <h5 class="mt-o">{{ like_comment.text }}</h5>
+                            <h5 class="mt-o">{{ like_comment.created }}</h5>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        <div class="col-4">
+        <div>
+          <img src="{{ blike.maps.url }}" alt="Card image cap" width="700" height="600"/>
+        </div>
+        <br>
+        <div>
+          <table style=border-spacing: 10px;>
+          <tr>
+            <td scope="col"><img src="{{ blike.image_two.url }}" width="350" height="300"></td>
+            <td scope="col"><img src="{{ blike.image_three.url }}" width="350" height="300"></td>
+          </tr>
+          <tr>
+            <td scope="col"><img src="{{ blike.image_four.url }}" width="350" height="300"></td>
+            <td scope="col"><img src="{{ blike.image_five.url }}" width="350" height="300"></td>
+          </tr>
+        </table>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock content %}

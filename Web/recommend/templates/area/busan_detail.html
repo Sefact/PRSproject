@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <br>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'home' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'area' %}">Area</a>
+      </li>
+      <li class="breadcrumb-item active">{{ busan.title }}</li>
+    </ol>
+    <div class="row">
+        <div class="col-6">
+            <div class="card mb-4">
+                {% if busan.image_one %}
+                    <img class="card-img-top" src="{{ busan.image_one.url }}" alt="Card image cap" width="1200" height="600">
+                {% endif %}
+                <div class="card-body">
+                    <h1>{{ busan.title }}<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;{{ busan.rating }}</span></h1>
+                    <p style="color: #AEAEAE;">&nbsp;{{ busan.division }}</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td style="color: #D5D4D4;" scope="col">주소</td>
+                                <td scope="col">{{ busan.address }}</td>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <td style="color: #D5D4D4;" scope="col">전화번호</td>
+                                <td scope="col">{{ busan.call }}</td>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <td style="color: #D5D4D4;" scope="col">주차</td>
+                                <td scope="col">{{ busan.park }}</td>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <td style="color: #D5D4D4;" scope="col">영업시간</td>
+                                <td scope="col">{{ busan.hours }}</td>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <td style="color: #D5D4D4;" scope="col">가격</td>
+                                <td scope="col">{{ busan.price }}</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="card-footer text-muted">
+                    {{busan.pub_date}}
+                </div>
+            </div>
+
+            <div class="card my-4">
+                <h5 class="card-header">Leave a Comment:</h5>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>                
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+        <div>
+          <img src="{{ busan.maps.url }}" alt="Card image cap" width="700" height="600"/>
+        </div>
+        <br>
+        <div>
+          <table style=border-spacing: 10px;>
+          <tr>
+            <td scope="col"><img src="{{ busan.image_two.url }}" width="350" height="300"></td>
+            <td scope="col"><img src="{{ busan.image_three.url }}" width="350" height="300"></td>
+          </tr>
+          <tr>
+            <td scope="col"><img src="{{ busan.image_four.url }}" width="350" height="300"></td>
+          </tr>
+        </table>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock content %}

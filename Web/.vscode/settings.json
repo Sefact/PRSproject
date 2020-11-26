@@ -1,0 +1,8 @@
+// settings.json
+{
+    "python.pythonPath": "/home/lime/miniconda3/envs/venv/bin/python",
+    "python.linting.pylintPath": "/home/lime/miniconda3/envs/venv/bin/pylint",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.formatting.autopep8Path": "/home/lime/miniconda3/envs/venv/bin/autopep8",
+}

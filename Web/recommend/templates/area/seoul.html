@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">서울</h1>
+
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="{% url 'area' %}">Area</a>
+        </li>
+        <li class="breadcrumb-item active">Seoul</li>
+        </ol>
+
+        <div class="row">
+            {% for seoul in seouls.all %}
+            <div class="col-md-7">
+                <a href="{% url 'seoul_detail' seoul.id %}">
+                    <img class="rounded mb-3 mb-md-0" src="{{ seoul.image_one.url }}" width="620" height="360">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>{{ seoul.title }}<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;{{ seoul.rating }}</span></h3>
+                <a style="color: #D5D4D4;">{{ seoul.division }}</a>
+                <p>{{ seoul.summary }}</p>
+                <p><hr>주소 : {{ seoul.address }}<br>
+                        전화번호 : {{ seoul.call }}<br>
+                        주차 : {{ seoul.park }}<br>
+                        영업시간 : {{ seoul.hours }}<br>
+                        입장료 : {{ seoul.price }}</p>
+                <a class="btn btn-primary" href="#">더 보기
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+                <p><br><br><br></p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

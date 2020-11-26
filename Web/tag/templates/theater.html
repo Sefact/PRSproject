@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">연극</h1>
+
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="{% url 'tag' %}">Tag</a>
+        </li>
+        <li class="breadcrumb-item active">Theater</li>
+        </ol>
+
+        <div class="row">
+            {% for theater in theaters.all %}
+            <div class="col-md-7">
+                <a href="{% url 'theaterdetail' theater.id %}">
+                    <img class="img-fluid rounded mb-3 mb-md-0" src="{{ theater.image_one.url }}" height="200">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>{{ theater.title }}<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;{{ theater.rating }}</span></h3>
+                <a style="color: #D5D4D4;">{{ theater.division }}</a>
+                <p><hr>주소 : {{ theater.address }}<br>
+                        전화번호 : {{ theater.call }}<br>
+                        주차 : {{ theater.park }}<br>
+                        영업시간 : {{ theater.hours }}<br>
+                        입장료 : {{ theater.price }}<br>
+                <a class="btn btn-primary" href="#">더 보기
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+                <p><br><br><br></p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

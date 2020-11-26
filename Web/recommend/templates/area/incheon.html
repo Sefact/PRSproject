@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">인천</h1>
+
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="{% url 'area' %}">Area</a>
+        </li>
+        <li class="breadcrumb-item active">Incheon</li>
+        </ol>
+
+        <div class="row">
+            {% for incheon in incheons.all %}
+            <div class="col-md-7">
+                <a href="{% url 'incheon_detail' incheon.id %}">
+                    <img class="img-fluid rounded mb-3 mb-md-0" src="{{ incheon.image_one.url }}" width="620" height="400">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>{{ incheon.title }}<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;{{ incheon.rating }}</span></h3>
+                <a style="color: #D5D4D4;">{{ incheon.division }}</a>
+                <p>{{ incheon.summary }}</p>
+                <p><hr>주소 : {{ incheon.address }}<br>
+                        전화번호 : {{ incheon.call }}<br>
+                        주차 : {{ incheon.park }}<br>
+                        영업시간 : {{ incheon.hours }}<br>
+                        입장료 : {{ incheon.price }}</p>
+                <a class="btn btn-primary" href="{% url 'incheon_detail' incheon.id %}">더 보기
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+                <p><br><br></p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

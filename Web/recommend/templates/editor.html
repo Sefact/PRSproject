@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">에디터 추천</h1>
+
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Editor</li>
+        </ol>
+
+        <div class="row">
+            {% for editor in editors.all %}
+            <div class="col-md-7">
+                <a href="{% url 'edetail' editor.id %}">
+                    <img class="img-fluid rounded mb-3 mb-md-0" src="{{ editor.image_one.url }}" alt="">
+                </a>
+            </div>  
+            <div class="col-md-5">
+                <h3>{{ editor.title }}<span style="font-weight: bold; font-size: x-large; color: #FFA500;">&nbsp;{{ editor.rating }}</span></h3>
+                <a style="color: #D5D4D4;">{{ editor.division }}</a>
+                <p>{{ editor.summary }}</p>
+                <p><hr>주소 : {{ editor.address }}<br>
+                        전화번호 : {{ editor.call }}<br>
+                        주차 : {{ editor.park }}<br>
+                        영업시간 : {{ editor.hours }}<br>
+                        </p>
+                <a class="btn btn-primary" href="#">더 보기
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+                <p><br><br></p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
